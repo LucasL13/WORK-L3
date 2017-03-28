@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta title="Index" />
+
+    <meta charset="UTF-8" />
+
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/account.js"></script>
+    <!--<script type="text/javascript" src="js/test.js"></script>-->
+
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+    <link type="text/css" rel="stylesheet" href="css/account.css" media="screen,projection" />
+
+</head>
+
+<body class="grey darken-3">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col l10 m12 s12 offset-l1" style="margin-top:5em">
+
+                <!-- Menu de navigations avec les onglets des etapes -->
+
+                <ul id="tabs-swipe-demo" class="tabs">
+
+                    <li class="tab col s3 tooltipped tab-active" data-position="top" data-delay="0" data-tooltip="Créer mon compte" id="tab-step-1">
+                        <a class="active" href="#test-swipe-1" id="tab-step-1-click"><img src="img/utils/btn_one_step.png">
+                            <div class="tab_arrow"></div>
+                        </a>
+
+                    </li>
+
+                    <li class="tab col s3 tooltipped disabled" data-position="top" data-delay="0" data-tooltip="Configurer mes options" id="tab-step-2">
+                        <a class="" href="#test-swipe-2" id="tab-step-2-click"><img src="img/utils/btn_two_step.png">
+                            <div class="tab_arrow">
+                        </a>
+                    </li>
+
+                    <li class="tab col s3 tooltipped disabled" data-position="top" data-delay="0" data-tooltip="Choisir mon starter" id="tab-step-3">
+                        <a class="" href="#test-swipe-3" id="tab-step-3-click"><img src="img/utils/btn_three_step.png">
+                            <div class="tab_arrow">
+                        </a>
+                    </li>
+
+                    <li class="tab col s3 tooltipped disabled" data-position="top" data-delay="0" data-tooltip="Combattre !" id="tab-step-4">
+                        <a class="" href="#test-swipe-4" id="tab-step-4-click"><img src="img/utils/btn_four_step.png"></a>
+                    </li>
+
+                </ul>
+
+
+                <!-- 1ere Etape : Remplir le formulaire d'inscription -->
+
+                <div id="test-swipe-1" class="col s12 white">
+                    <div class="row" id="zone_content_form">
+                        <div class="row">
+                            <div class="input-field col s8 offset-s2">
+                                <input placeholder="" id="pseudo" name="pseudo" type="text" class="validate">
+
+                                <label for="pseudo">Pseudo</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s8 offset-s2">
+                                <input placeholder="" id="password" name="password" type="password" class="validate">
+
+                                <label for="password">Mot de passe</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s8 offset-s2">
+                                <input placeholder="" id="password_confirm" name="password_confirm" type="password" class="validate">
+
+                                <label for="password_confirm">Confirmez le mot de passe</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s8 offset-s2">
+                                <input placeholder="" id="email" name="email" type="email" class="validate">
+
+                                <label for="email">Email</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s4 offset-s4 center-align">
+                                <input type="submit" class="btn-large waves-effect waves-light light-green" id="btn-create" value="Créer mon compte">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- 2eme Etape : Choisir les options du compte -->
+
+                <div id="test-swipe-2" class="col s12  amber darken-2 white-text center-align">
+                    <div class="row" id="zone_content_configure_account">
+                        <div class="row">
+                            <div class="switch col s8 offset-s2 center-align">
+
+                                <h5> Recevoir des newsletter de nos partenaires </h5>
+                                <label class="white-text">
+                                            Off
+                                            <input type="checkbox">
+                                            <span class="lever"></span>
+                                            On
+                                            </label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="switch col s8 offset-s2 center-align">
+
+                                <h5> Recevoir des offres gratuites par e-mail </h5>
+                                <label class="white-text">
+                                            Off
+                                            <input type="checkbox" class="blue">
+                                            <span class="lever"></span>
+                                            On
+                                            </label>
+                            </div>
+                        </div>
+
+                        <a class="btn-large waves-effect grey white-text" id="step2-nextbtn"> Etape suivante </a>
+
+                    </div>
+                </div>
+
+
+                <!-- 3eme Etape : Choix du deck STARTER -->
+
+                <div id="test-swipe-3" class="col s12  amber darken-2" style="padding: 4em">
+                    <div class="row" id="zone_content_starter">
+                        <div class="row center-align">
+
+                            <div class="col l4 m4 s12">
+                                <div class="row">
+                                    <div class="col s12 m12 l12 transparent">
+                                        <div class="card transparent" style="box-shadow:none" id="card_starter_YSNP">
+                                            <div class="card-image">
+                                                <img src="img/utils/BOX_STARTER_YOUSHALLNOTPASS.png">
+                                            </div>
+                                            <div class="card-content transparent white-text">
+                                                <div class="card black darken-1">
+                                                    <div class="card-content white-text">
+                                                        <span class="card-title blue-text">You shall not pass</span>
+                                                        <p>Un deck défensif pour ceux qui n'aiment pas recevoir de dégats</p>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col l4 m4 s12">
+                                <div class="row">
+                                    <div class="col s12 m12 l12 transparent">
+                                        <div class="card transparent" style="box-shadow:none" id="card_starter_HP">
+                                            <div class="card-image">
+                                                <img src="img/utils/BOX_STARTER_HARRYPOWDER.png">
+                                            </div>
+                                            <div class="card-content transparent white-text">
+                                                <div class="card black darken-1">
+                                                    <div class="card-content white-text">
+                                                        <span class="card-title green-text">Harry Powder</span>
+                                                        <p>Un deck pour les magiciens, rempli de sorts puissants</p>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col l4 m4 s12">
+                                <div class="row">
+                                    <div class="col s12 m12 l12 transparent">
+                                        <div class="card transparent" style="box-shadow:none" id="card_starter_MTBBWY">
+                                            <div class="card-image">
+                                                <img src="img/utils/BOX_STARTER_MAYTHEBOMB.png">
+                                            </div>
+                                            <div class="card-content transparent white-text">
+                                                <div class="card black darken-1">
+                                                    <div class="card-content white-text">
+                                                        <span class="card-title red-text">May the bomb be with you</span>
+                                                        <p>Un deck tres offensif, pour frapper fort et ... frapper fort !</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a class="btn-large waves-effect black orange-text" id="btn-valider-starter"> Choisir ce deck </a>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- 4eme Etape : Lire les regles / Faire le tutorial / Commencer à combattre -->
+
+                <div id="test-swipe-4" class="col s12 amber darken-2">
+                    <div class="container">
+                        <div class="row" id="zone_content_starter">
+                            <div class="row center-align">
+                                <i class="material-icons large white-text">done</i>
+                                <h4 class="white-text"> Félicitations, votre compte à été crée </h4>
+
+                                <ul class="" style="margin-top: 5vh">
+                                    <li>
+                                        <div class="collapsible-header blue white-text">Lire les règles du jeu</div>
+                                    </li>
+                                    <li>
+                                        <div class="collapsible-header green white-text">Faire le tutoriel</div>
+                                    </li>
+                                    <li>
+                                        <div class="collapsible-header red white-text">Commencer a combattre</div>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                </div>
+
+                </div>
+
+
+
+</body>
+
+</html>
