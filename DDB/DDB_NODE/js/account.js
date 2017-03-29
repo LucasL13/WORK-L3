@@ -5,7 +5,6 @@ var step = 1;
 var account;
 
 $(document).ready(function(){
-    alert(ACHAT_FAILED_MDP);
 
     socket = io.connect('http://localhost:8080');
 
@@ -22,6 +21,8 @@ $(document).ready(function(){
     socket.on("CREATE_ACCOUNT_SUCCESS", function(obj){
         next_step();
     });
+
+   
 
     $('ul.tabs').tabs({});
 
@@ -47,8 +48,29 @@ $(document).ready(function(){
         setSelectedStarter("#card_starter_MTBBWY", "red");
     });
 
+
+    $("#signin_submit").click(() => connect_account());
+
+     socket.on("CONNECT_ACCOUNT_CHECK_SUCCESS", function(obj){
+        console.log("jai recu walla");
+        alert("CONNEXION REUSSIE");
+    });
+    
+    socket.on("CONNECT_ACCOUNT_CHECK_FAIL", function(obj){
+        alert("CONNEXION ECHOUEE");
+    });
+
 });
 
+function connect_account(){
+
+    var account = {
+        'pseudo': $("#signin_pseudo").val(),
+        'password': $("#signin_password").val()
+    };
+
+    socket.emit("CONNECT_ACCOUNT_CHECK", account);
+}
 
 function check_account(){
     var pseudo      = $("#pseudo").val();
