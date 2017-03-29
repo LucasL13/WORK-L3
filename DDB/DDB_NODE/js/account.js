@@ -5,6 +5,7 @@ var step = 1;
 var account;
 
 $(document).ready(function(){
+    alert(ACHAT_FAILED_MDP);
 
     socket = io.connect('http://localhost:8080');
 
@@ -18,12 +19,15 @@ $(document).ready(function(){
         next_step();
     });
 
+    socket.on("CREATE_ACCOUNT_SUCCESS", function(obj){
+        next_step();
+    });
+
     $('ul.tabs').tabs({});
 
 
     $("#tab-step-1").trigger("mouseenter");
 
-    $("#btn-valider-starter").click(() => next_step());
     $("#btn-valider-starter").click(() => create_account());
 
     $("#step2-nextbtn").click(() => next_step());
@@ -77,11 +81,9 @@ function check_account(){
     socket.emit("CREATE_ACCOUNT_CHECK", account);
 }
 
-
 function create_account(){
     socket.emit("CREATE_ACCOUNT_SEND", account);
 }
-
 
 function next_step(){
     $("#tab-step-"+step).removeClass("tab-active");
@@ -94,7 +96,6 @@ function next_step(){
     $("#tab-step-"+step+"-click").trigger("click");
     $("#tab-step-"+step).trigger("mouseenter");
 }
-
 
 function setSelectedStarter(id, color){
         $("#btn-valider-starter").show();

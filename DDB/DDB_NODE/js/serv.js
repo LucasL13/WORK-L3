@@ -83,5 +83,5 @@ function create_account(obj, sock){
         //         sock.emit("CREATE_ACCOUNT_SUCCESS", 0);
         //     }
         // });
-
+        sock.emit("CREATE_ACCOUNT_SUCCESS",0);
 }
