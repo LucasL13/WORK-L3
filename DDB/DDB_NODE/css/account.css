@@ -4,6 +4,10 @@
     src: url("../fonts/edosz.ttf");
 }
 
+.edo{
+    font-family: edo;
+}
+
 body{
     background-image: url("../img/utils/new_bg.png");
     background-attachment: fixed;
