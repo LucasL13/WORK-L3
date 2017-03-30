@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="css/index.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
+    
+</head>
+
+<body>
+
+    <div class="row" id="GUI_NAV">
+
+        <div class="col l1 m4 s12">
+            <img src="img/iconeBase.png" id="" class="responsive-img">
+        </div>
+
+        <div class="col l2 m1 s12"></div>
+
+        <div class="col l8 m6 s12">
+            <nav>
+                <div>
+                    <div class="nav-container">
+                        <ul>
+                            <li class="menu-item selected"><a href="#">compte</a></li>
+                            <li class="menu-item"><a href="index.html">boutique</a></li>
+                            <li class="menu-item"><a href="#">decks</a></li>
+                            <li class="menu-item"><a href="#">social</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div class="col l1 m1 s12"></div>
+
+
+
+    </div>
+
+    <div class="row" id="GUI_CONTENT">
+        <div class="container">
+           
+        </div>
+    </div>
+
+    <script>
+        /* pour faire fonctionner la barre de nav */
+        $('.menu-item').click(function () {
+            $('.selected').children().removeClass('selected-link');
+            $('.selected').removeClass('selected');
+
+            $(this).addClass('selected');
+            $(this).children().addClass('selected-link');
+
+
+        });
+      /* navbar script end */
+    </script>
+</body>
+
+</html>
