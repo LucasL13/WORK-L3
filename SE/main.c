@@ -15,58 +15,101 @@
 #include "sgf-dir.h"
 #include "sgf-io.h"
 
-int main() {
-	OFILE* file;
-	int c;
-
-	init_sgf();
-
-	printf("\nListing du disque :\n____________________________________________\n\n");
-	list_directory();
-	printf("____________________________________________\n\n\n");
+int main()
+{
+    OFILE *file;
+    int c;
+    init_sgf();
 
 
 
-	printf("____________________________________________\n");
-	file = sgf_open("essai.txt", READ_MODE);
+    /*_________________________________________________*/
+    /* On liste une premiere fois le contenu du disque */
+    printf("\nListing du disque\n\n");
+    list_directory();
 
-	while ((c = sgf_getc(file)) > 0) {
-		putchar(c);
-		// if(sgf_seek(file, 1) < 0)
-		// 	break;
-	}
 
-	sgf_close(file);
-	printf("____________________________________________\n\n");
 
+
+    /*__________________________________________________*/
+    /* On lit le contenu initial du fichier "essai.txt" */
+    file = sgf_open("essai.txt", READ_MODE);
+    while ((c = sgf_getc(file)) > 0)
+    {
+        putchar(c);
+	//sgf_seek(file, 8);
+    }
+    sgf_close(file);
+
+
+
+    /*_______________________*/
+    /* On supprime essai.txt */
+    printf("\nRemoving essai.txt : %d\n", file->inode);
+    sgf_remove(file->inode);
+
+
+
+
+    /*______________________________________________*/
+    /* On ecrit dans le nouveau fichier "essai.txt" */
 	file = sgf_open("essai.txt", WRITE_MODE);
-
-	// printf("____________________________________________\n");
-
-	int i;
-	for(i=0; i < 26; i++){
-		sgf_putc(file, 'a'+i);
-	}
-	sgf_putc(file, '\n');
-
+	sgf_puts(file, "Salut je m'apelle lucas je suis content d'ecrire dans ce buffer sinon bah je sais pas trop quoi dire d'autre");
 	sgf_close(file);
-	//
-	// i	mnt i;
-	// for(i=0; i < 100; i++){
-	// 	sgf_putc(file, 'a');
-	// }
-	//
-	// sgf_close(file);
-	// file = sgf_open("essai.txt", READ_MODE);
-	// sgf_seek(file, -(file->length));
-	//
-	// while ((c = sgf_getc(file)) > 0) {
-	// 	putchar(c);
-	// 	// if(sgf_seek(file, 7) < 0)
-	// 	// 	break;
-	// }
 
-	//sgf_close(file);
 
-	return (EXIT_SUCCESS);
-	}
+
+    /*_________________________________________________*/
+    /* On liste une nouvelle fois le contenu du disque */
+	printf("\nListing du disque\n\n");
+    list_directory(); 
+
+
+
+
+    /*____________________________________________________________*/
+    /* On lit le nouveau contenu du "nouveau" fichier "essai.txt" */
+	file = sgf_open("essai.txt", READ_MODE);
+    while ((c = sgf_getc(file)) > 0)
+    {
+		putchar(c);
+	    //sgf_seek(file, 8);
+    }
+    sgf_close(file);
+
+
+
+
+    /*____________________________________________________________*/
+    /* On 'append' du contenu au fichier essai.txt" */
+    file = sgf_open("essai.txt", WRITE_MODE);
+	sgf_puts(file, "\nJ'ajoute du nouveau contenu au fichier ! On va voir ce que ça peut donner'");
+	sgf_close(file);
+
+
+
+    /*_________________________________________________*/
+    /* On liste une nouvelle fois le contenu du disque */
+	printf("\nListing du disque\n\n");
+    list_directory(); 
+
+
+
+
+    /*____________________________________________________________*/
+    /* On lit le nouveau contenu du "nouveau" fichier "essai.txt" */
+	file = sgf_open("essai.txt", READ_MODE);
+    while ((c = sgf_getc(file)) > 0)
+    {
+		putchar(c);
+	    //sgf_seek(file, 8);
+    }
+    sgf_close(file);
+
+
+
+
+    
+	printf("\n\n\n");
+    return (EXIT_SUCCESS);
+}

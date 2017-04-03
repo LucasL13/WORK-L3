@@ -20,18 +20,18 @@ static int directory_first_block = -1;
  *********************************************************************/
 
 int find_inode(const char* name)
-    {
+{
     int adr;
     TBLOCK b;
     int j;
-
+    
     if (directory_first_block == -1) {
         read_block(ADR_BLOCK_DEF, & b.data);
         directory_first_block = b.super.adr_dir;
         }
 
     adr = directory_first_block;
-
+    
     while (adr != FAT_EOF)
         {
         read_block(adr, &b.data);
@@ -41,13 +41,13 @@ int find_inode(const char* name)
                     return (b.dir[j].inode);
         adr = get_fat(adr);
         }
-
+    
     return (-1);
     }
 
 
 /**********************************************************************
- Ajouter un couple <name,inode> au rï¿½pertoire. Si un couple existe dï¿½jï¿½,
+ Ajouter un couple <name,inode> au répertoire. Si un couple existe déjà,
  la fonction renvoie l'adresse du descripteur et -1 dans le cas
  contraire.
  *********************************************************************/
@@ -57,18 +57,18 @@ int add_inode (const char* name, int inode)
     int  oldinode, padr, adr, nadr;
     int j, nj;
     TBLOCK  b;
-
+    
     if ((strlen(name) + 1) > LONG_FILENAME) {
         return (-1);
         }
-
+    
     if (directory_first_block == -1) {
         read_block(ADR_BLOCK_DEF, & b.data);
         directory_first_block = b.super.adr_dir;
         }
 
     adr = directory_first_block;
-
+    
     nadr = nj = -1;
     while (adr != FAT_EOF)
         {
@@ -96,10 +96,10 @@ int add_inode (const char* name, int inode)
         return (-1);
         }
 
-    /** Allouer un nouveau bloc pour le rï¿½pertoire **/
+    /** Allouer un nouveau bloc pour le répertoire **/
     adr = alloc_block();
     if (adr < 0) return (-1);
-
+    
     /** Initialiser ce nouveau bloc **/
     for(j = 0; j < BLOCK_DIR_SIZE; j++)
         b.dir[j].inode = 0;
@@ -108,17 +108,17 @@ int add_inode (const char* name, int inode)
     b.dir[0].inode = inode;
     strcpy(b.dir[0].name, name);
     write_block(adr, & b.data);
-
-    /** Mettre ï¿½ jour la FAT **/
+    
+    /** Mettre à jour la FAT **/
     set_fat(adr, FAT_EOF);
     set_fat(padr, adr);
-
+    
     return (-1);
     }
 
 
 /**********************************************************************
- Effacer un couple <name,inode> au rï¿½pertoire.
+ Effacer un couple <name,inode> au répertoire.
  *********************************************************************/
 
 void delete_inode (const char* name)
@@ -126,7 +126,7 @@ void delete_inode (const char* name)
     int adr;
     TBLOCK b;
     int j;
-
+    
     if (directory_first_block == -1)
         {
         read_block(ADR_BLOCK_DEF, & b.data);
@@ -134,7 +134,7 @@ void delete_inode (const char* name)
         }
 
     adr = directory_first_block;
-
+    
     while (adr != FAT_EOF)
         {
         read_block(adr, & b.data);
@@ -152,7 +152,7 @@ void delete_inode (const char* name)
 
 
 /**********************************************************************
- Formater le disque et crï¿½er un rï¿½pertoire vide.
+ Formater le disque et créer un répertoire vide.
  *********************************************************************/
 
 void create_empty_directory ()
@@ -160,12 +160,12 @@ void create_empty_directory ()
     int adr_repertoire;
     TBLOCK b;
     int j;
-
+    
     /* lire le super bloc */
     read_block(0, &b.data);
     directory_first_block = adr_repertoire = b.super.adr_dir;
-
-    /* vider le 1er bloc du rï¿½pertoire et le sauver */
+    
+    /* vider le 1er bloc du répertoire et le sauver */
     for(j = 0; j < BLOCK_DIR_SIZE; j++) b.dir[j].inode = 0;
     write_block(adr_repertoire, & b.data);
 
@@ -174,31 +174,36 @@ void create_empty_directory ()
 
 
 /**********************************************************************
- Lister les fichiers du rï¿½pertoire avec leur taille.
+ Lister les fichiers du répertoire avec leur taille.
  *********************************************************************/
 
 void list_directory (void)
-{
+ {
     TBLOCK b, b2;
     int adr;
     int j;
-
-    if(directory_first_block == -1){
-      read_block(ADR_BLOCK_DEF, &b.data);
-      directory_first_block = b.super.adr_dir;
+    
+    if (directory_first_block == -1) 
+    {
+        read_block(ADR_BLOCK_DEF, & b.data);
+        directory_first_block = b.super.adr_dir;
     }
 
     adr = directory_first_block;
-
-    while(adr != FAT_EOF){
-      read_block(adr, &b.data);
-      for(j=0; j < BLOCK_DIR_SIZE; j++){
-        if(b.dir[j].inode > 0){
-          read_block(b.dir[j].inode, &b2.data);
-          printf("%s i-node %d taille : %d \n", b.dir[j].name, b.dir[j].inode, b2.inode.length);
+    
+    while (adr != FAT_EOF)
+        {
+        read_block(adr, &b.data);
+        for(j = 0; j < BLOCK_DIR_SIZE; j++)
+        {
+            if (b.dir[j].inode > 0)
+            {
+					read_block(b.dir[j].inode, &b2.data);
+					printf("fichier : %s  | inode : %d  | taille : %d\n", b.dir[j].name, b.dir[j].inode, b2.inode.length);
+			}	
+        }       
+        adr = get_fat(adr);
         }
-      }
-      adr = get_fat(adr);
     }
-    return;
-  }
+
+

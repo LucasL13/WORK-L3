@@ -9,14 +9,14 @@
 
 /**********************************************************************
  *
- *  Structure de donnï¿½e pour reprï¿½senter le rï¿½pertoire.
+ *  Structure de donnée pour représenter le répertoire.
  *
  *********************************************************************/
 
 #define LONG_FILENAME           (32 - sizeof(int))
 #define BLOCK_DIR_SIZE          (BLOCK_SIZE / sizeof(DIR_ENTRY))
 
-typedef struct DIR_ENTRY        /* Une entrï¿½e de rï¿½pertoire         */
+typedef struct DIR_ENTRY        /* Une entrée de répertoire         */
     {                           /* -------------------------------- */
     char name [LONG_FILENAME];  /* nom du fichier                   */
     int  inode;                 /* adresse du descripteur           */
@@ -28,7 +28,7 @@ typedef  DIR_ENTRY       BLOCK_DIR [ BLOCK_DIR_SIZE ];
 
 /**********************************************************************
  *
- *  Structure de donnï¿½e pour reprï¿½senter les descripteurs.
+ *  Structure de donnée pour représenter les descripteurs.
  *
  *********************************************************************/
 
@@ -43,7 +43,7 @@ typedef struct INODE            /* INODE: Descripteur de fichiers   */
 
 /**********************************************************************
  *
- *  Dï¿½finition d'un Super Bloc (Bloc de dï¿½finition du systï¿½me
+ *  Définition d'un Super Bloc (Bloc de définition du système
  *  de fichiers).
  *
  *********************************************************************/
@@ -52,16 +52,16 @@ typedef struct INODE            /* INODE: Descripteur de fichiers   */
 
 typedef struct SUPER_BLOCK      /* Bloc d'un <<super bloc>>         */
     {                           /* -------------------------------- */
-    int  signature;             /* signature du systï¿½me de fichiers */
-    int  adr_dir;               /* adr du 1er bloc du rï¿½pertoire    */
+    int  signature;             /* signature du système de fichiers */
+    int  adr_dir;               /* adr du 1er bloc du répertoire    */
     }
     SUPER_BLOCK;
 
 
 /**********************************************************************
  *
- *  Dï¿½finition d'un bloc typï¿½ qui est soit un super-bloc, soit un bloc
- *  rï¿½pertoire, soit un INODE, soit un bloc de donnï¿½es.
+ *  Définition d'un bloc typé qui est soit un super-bloc, soit un bloc
+ *  répertoire, soit un INODE, soit un bloc de données.
  *
  *********************************************************************/
 
