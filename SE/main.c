@@ -101,35 +101,43 @@ void test1()
 
 
 void test_append(){
-    /*________________________________*/
-    /* On vide le fichier "essai.txt" */
-    file = sgf_open("essai.txt", WRITE_MODE);
+
+    /*_____________________________________________*/
+    /* On ouvre un fichier vide "essai_append.txt" */
+    file = sgf_open("essai_append.txt", WRITE_MODE);
     // sgf_puts(file, " ");
     sgf_close(file);
 
-    /*____________*/
-    /* On vérifie */
+    /*________________________*/
+    /* On vérifie sa création */
     ls();
-
 
     /*__________________________________________________________*/
     /* On 'append' 500 fois un caractere au fichier "essai.txt" */
 
     int i;
     for(i=0; i<500; i++){
-        file = sgf_open("essai.txt", APPEND_MODE);
-        sgf_putc(file, ((i+97)%122));
+        file = sgf_open("essai_append.txt", APPEND_MODE);
+        sgf_putc(file, ('a'+ (i%26) ));
         sgf_close(file);
     }
 
+    /*________________________*/
+    /* On vérifie (length doit ête = 500) */
+    printf("_________________\n");
+    ls();
+    printf("_________________\n");
+
+
     /*____________________________________________________________*/
     /* On lit pour vérifier le contenu de "essai.txt" */
-    file = sgf_open("essai.txt", READ_MODE);
+    file = sgf_open("essai_append.txt", READ_MODE);
     while ((c = sgf_getc(file)) > 0)
     {
         putchar(c);
         //sgf_seek(file, 8);
     }
+
     sgf_close(file);
 }
 
@@ -143,8 +151,9 @@ int main()
     /* On liste une premiere fois le contenu du disque */
     ls();
 
+    printf("-----------------\n");
 
-    //test1();
+    // test1();
     test_append();
 
     printf("\n\n\n");

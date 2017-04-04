@@ -106,13 +106,19 @@ int sgf_append_block(OFILE* f)
     }
     else{
         adr = f->last;
-        write_block(adr, &f->buffer);
-        f->mode = WRITE_MODE;
+        // read_block(adr, &b.data);
+        // char tmp[300];
+        // sprintf(tmp, "%s%s", b.data, f->buffer);
+        printf("BUFFER = %s\n", f->buffer);
+        write_block(adr, f->buffer);
     }
 
-
+    // printf("\n Je vais write(%d) : %s\n", adr, f->buffer);
 	set_fat(adr, FAT_EOF);
-	
+
+    if(f->mode == APPEND_MODE)
+        f->mode = WRITE_MODE;
+
 	if(f->first == FAT_EOF)
 	{
 		f->first = adr;
@@ -130,7 +136,7 @@ int sgf_append_block(OFILE* f)
 	
 	write_block(f->inode, &b.data);
 
-    memset(f->buffer, 0, sizeof(char)*128);
+    // memset(f->buffer, 0, sizeof(char)*128);
 
 	return 0;
 }
@@ -147,7 +153,7 @@ int sgf_putc(OFILE* f, char  c)
     f->buffer[f->ptr % BLOCK_SIZE] = c;
     f->ptr++;
 
-    //printf("Je put (%d) : %c\n", f->ptr%BLOCK_SIZE, c);
+    // printf("Je put (%d) : %c\nBuffer = %c\n", f->ptr%BLOCK_SIZE, c, f->buffer);
 
     if((f->ptr % BLOCK_SIZE) == 0)
     {
@@ -299,13 +305,6 @@ static  OFILE*  sgf_open_append(const char* nom)
 
     /* lire le inode */
     read_block(inode, &b.data);
-
-    if((b.inode.length % 8) == 0)
-        printf("Tous les blocs full\n");
-        // le dernier bloc est complet
-        // il faut surement créer un nouveau bloc
-        // le mettre en tant que b.inode.last
-
     
     /* Allouer une structure OFILE */
     file = malloc(sizeof(struct OFILE));
@@ -317,6 +316,9 @@ static  OFILE*  sgf_open_append(const char* nom)
     file->inode   = inode;
     file->mode    = APPEND_MODE;
     file->ptr     = b.inode.length; 
+
+    if((b.inode.length % BLOCK_SIZE) == 0)
+        file->mode = WRITE_MODE;
 
     return (file);
 }
