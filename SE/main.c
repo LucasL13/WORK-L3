@@ -54,7 +54,7 @@ int main()
     /*______________________________________________*/
     /* On ecrit dans le nouveau fichier "essai.txt" */
 	file = sgf_open("essai.txt", WRITE_MODE);
-	sgf_puts(file, "Salut je m'apelle lucas je suis content d'ecrire dans ce buffer sinon bah je sais pas trop quoi dire d'autre");
+	sgf_puts(file, "Salut je m'apelle lucas je suis content d'ecrire dans ce buffer sinon bah je sais pas trop quoi dire d'autre! Il faut que je continue d'ecrire pour avoir un buffer avec plus de cent-vingt-huit caracteres");
 	sgf_close(file);
 
 
@@ -76,16 +76,25 @@ int main()
 	    //sgf_seek(file, 8);
     }
     sgf_close(file);
+    printf("\n\n");
 
 
 
 
     /*____________________________________________________________*/
     /* On 'append' du contenu au fichier essai.txt" */
-    file = sgf_open("essai.txt", WRITE_MODE);
-	sgf_puts(file, "\nJ'ajoute du nouveau contenu au fichier ! On va voir ce que ça peut donner'");
-	sgf_close(file);
+    file = sgf_open("essai.txt", APPEND_MODE);
 
+	//MARCHE BIEN
+    sgf_puts(file, " Salut salut salut salut salut");
+
+    //MARCHE PAS (FAIT DE LA MERDE)
+    //sgf_puts(file, " Salut salut salut salut salut salut salut salut salut salut salut salut salut salut salut salut salut salut salut");
+	
+    sgf_close(file);
+
+
+    printf("\n----------------------\n");
 
 
     /*_________________________________________________*/

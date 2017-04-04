@@ -1,5 +1,5 @@
 
-CFLAGS=-ansi -Wall
+CFLAGS=-ansi -Wall -g -w -std=c99
 CSRC=$(wildcard sgf*.c)
 OBJ=$(CSRC:.c=.o)
 HDR=$(CSRC:.c=.h)
