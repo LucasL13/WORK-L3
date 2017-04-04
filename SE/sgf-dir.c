@@ -47,7 +47,7 @@ int find_inode(const char* name)
 
 
 /**********************************************************************
- Ajouter un couple <name,inode> au répertoire. Si un couple existe déjà,
+ Ajouter un couple <name,inode> au rï¿½pertoire. Si un couple existe dï¿½jï¿½,
  la fonction renvoie l'adresse du descripteur et -1 dans le cas
  contraire.
  *********************************************************************/
@@ -96,7 +96,7 @@ int add_inode (const char* name, int inode)
         return (-1);
         }
 
-    /** Allouer un nouveau bloc pour le répertoire **/
+    /** Allouer un nouveau bloc pour le rï¿½pertoire **/
     adr = alloc_block();
     if (adr < 0) return (-1);
     
@@ -109,7 +109,7 @@ int add_inode (const char* name, int inode)
     strcpy(b.dir[0].name, name);
     write_block(adr, & b.data);
     
-    /** Mettre à jour la FAT **/
+    /** Mettre ï¿½ jour la FAT **/
     set_fat(adr, FAT_EOF);
     set_fat(padr, adr);
     
@@ -118,7 +118,7 @@ int add_inode (const char* name, int inode)
 
 
 /**********************************************************************
- Effacer un couple <name,inode> au répertoire.
+ Effacer un couple <name,inode> au rï¿½pertoire.
  *********************************************************************/
 
 void delete_inode (const char* name)
@@ -152,7 +152,7 @@ void delete_inode (const char* name)
 
 
 /**********************************************************************
- Formater le disque et créer un répertoire vide.
+ Formater le disque et crï¿½er un rï¿½pertoire vide.
  *********************************************************************/
 
 void create_empty_directory ()
@@ -165,7 +165,7 @@ void create_empty_directory ()
     read_block(0, &b.data);
     directory_first_block = adr_repertoire = b.super.adr_dir;
     
-    /* vider le 1er bloc du répertoire et le sauver */
+    /* vider le 1er bloc du rï¿½pertoire et le sauver */
     for(j = 0; j < BLOCK_DIR_SIZE; j++) b.dir[j].inode = 0;
     write_block(adr_repertoire, & b.data);
 
@@ -174,7 +174,7 @@ void create_empty_directory ()
 
 
 /**********************************************************************
- Lister les fichiers du répertoire avec leur taille.
+ Lister les fichiers du rï¿½pertoire avec leur taille.
  *********************************************************************/
 
 void list_directory (void)
@@ -200,6 +200,7 @@ void list_directory (void)
             {
 					read_block(b.dir[j].inode, &b2.data);
 					printf("fichier : %s  | inode : %d  | taille : %d\n", b.dir[j].name, b.dir[j].inode, b2.inode.length);
+                    printf("fichier : %s  | first   : %d  | last  : %d\n\n", b.dir[j].name, b2.inode.first, b2.inode.last);
 			}	
         }       
         adr = get_fat(adr);

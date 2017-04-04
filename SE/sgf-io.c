@@ -98,7 +98,7 @@ int sgf_append_block(OFILE* f)
     TBLOCK b;
     int adr;
     
-    if(f->mode != APPEND_MODE){
+    if(f->mode == WRITE_MODE){
         adr = alloc_block();
         if(adr < 0)
             return -1;
@@ -106,17 +106,11 @@ int sgf_append_block(OFILE* f)
     }
     else{
         adr = f->last;
-        char tmp[300];
-        read_block(adr, &b.data);
-        //printf("old bloc = %s\n", b.data);
-        // printf("\nbuffer : %s\n", f->buffer); */
-        sprintf(tmp, "%s%s", b.data, f->buffer);
-        // printf("new bloc = %s\n", tmp);
+        write_block(adr, &f->buffer);
+        f->mode = WRITE_MODE;
     }
 
-    
-	write_block(adr, &f->buffer);
-   
+
 	set_fat(adr, FAT_EOF);
 	
 	if(f->first == FAT_EOF)
@@ -130,13 +124,14 @@ int sgf_append_block(OFILE* f)
 		f->last = adr;
 	}
 
-    // printf("\n----------\nAPPEND_BLOCK (ptr=%d)\n---------\n", f->ptr); 
-	
 	b.inode.length = f->ptr;
 	b.inode.first = f->first;
 	b.inode.last = f->last;
 	
 	write_block(f->inode, &b.data);
+
+    memset(f->buffer, 0, sizeof(char)*128);
+
 	return 0;
 }
 
