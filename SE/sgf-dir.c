@@ -199,8 +199,7 @@ void list_directory (void)
             if (b.dir[j].inode > 0)
             {
 					read_block(b.dir[j].inode, &b2.data);
-					printf("fichier : %s  | inode : %d  | taille : %d\n", b.dir[j].name, b.dir[j].inode, b2.inode.length);
-                    printf("fichier : %s  | first   : %d  | last  : %d\n\n", b.dir[j].name, b2.inode.first, b2.inode.last);
+					printf("\n\x1B[33mfichier : %s \x1B[0m\n\x1B[33minode : \x1B[0m%d  | \x1B[33mtaille : \x1B[0m%d  | \x1B[33mfirst : \x1B[0m%d | \x1B[33mlast : \x1B[0m%d \n", b.dir[j].name, b.dir[j].inode, b2.inode.length, b2.inode.first, b2.inode.last);
 			}	
         }       
         adr = get_fat(adr);

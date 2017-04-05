@@ -18,6 +18,16 @@
 #include "sgf-io.h"
 
 
+#define KNRM  "\x1B[0m"
+#define KRED  "\x1B[31m"
+#define KGRN  "\x1B[32m"
+#define KYEL  "\x1B[33m"
+#define KBLU  "\x1B[34m"
+#define KMAG  "\x1B[35m"
+#define KCYN  "\x1B[36m"
+#define KWHT  "\x1B[37m"
+
+
 
 /**********************************************************************
  *
@@ -102,18 +112,12 @@ int sgf_append_block(OFILE* f)
         adr = alloc_block();
         if(adr < 0)
             return -1;
-        write_block(adr, &f->buffer);
     }
     else{
         adr = f->last;
-        // read_block(adr, &b.data);
-        // char tmp[300];
-        // sprintf(tmp, "%s%s", b.data, f->buffer);
-        printf("BUFFER = %s\n", f->buffer);
-        write_block(adr, f->buffer);
     }
 
-    // printf("\n Je vais write(%d) : %s\n", adr, f->buffer);
+    write_block(adr, f->buffer);
 	set_fat(adr, FAT_EOF);
 
     if(f->mode == APPEND_MODE)
@@ -136,8 +140,6 @@ int sgf_append_block(OFILE* f)
 	
 	write_block(f->inode, &b.data);
 
-    // memset(f->buffer, 0, sizeof(char)*128);
-
 	return 0;
 }
 
@@ -152,8 +154,6 @@ int sgf_putc(OFILE* f, char  c)
     
     f->buffer[f->ptr % BLOCK_SIZE] = c;
     f->ptr++;
-
-    // printf("Je put (%d) : %c\nBuffer = %c\n", f->ptr%BLOCK_SIZE, c, f->buffer);
 
     if((f->ptr % BLOCK_SIZE) == 0)
     {
@@ -181,6 +181,25 @@ void sgf_puts(OFILE* file, char* s)
 
 
 
+
+int sgf_write(OFILE* f, char *data, int size){
+
+    // printf("Last file (%d->%d) : (buff) %s\n", f->last, f->ptr, f->buffer);
+    int local_ptr = 0;
+
+    while(local_ptr < size){
+        memcpy(f->buffer+(f->ptr%BLOCK_SIZE), data+local_ptr, 128-(f->ptr%BLOCK_SIZE) );
+        local_ptr+= 128 - (f->ptr%BLOCK_SIZE);
+        f->ptr += local_ptr;
+        sgf_append_block(f);
+    }
+    
+    printf("\n\x1B[32msgf_write: \x1B[33m%d \x1B[0mcaracteres ecrits\n", local_ptr);
+
+    return 0;
+}
+
+
 /**********************************************************************
  *
  *  FONCTIONS D'OUVERTURE, DE FERMETURE ET DE DESTRUCTION.
@@ -206,10 +225,9 @@ void sgf_remove(int adr_inode)
         adr = k;
     }
 
-    /* printf("inode : first(%d)  last(%d)  length(%d)\n",  b.inode.first ,  b.inode.last,  b.inode.length );
     b.inode.first = FAT_EOF;
     b.inode.last = FAT_EOF;
-    b.inode.length = 0; */
+    b.inode.length = 0;
 
     set_fat(adr_inode, FAT_FREE); 
 }
@@ -319,6 +337,10 @@ static  OFILE*  sgf_open_append(const char* nom)
 
     if((b.inode.length % BLOCK_SIZE) == 0)
         file->mode = WRITE_MODE;
+    else{
+        read_block(file->last, &b.data);
+        memcpy(file->buffer, b.data, sizeof(char)*BLOCK_SIZE);
+    }
 
     return (file);
 }
