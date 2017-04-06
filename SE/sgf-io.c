@@ -175,15 +175,26 @@ int sgf_write(OFILE* f, char *data, int size){
 
     // printf("Last file (%d->%d) : (buff) %s\n", f->last, f->ptr, f->buffer);
     int local_ptr = 0;
-
+    int charToWrite = 0;
+   
     while(local_ptr < size){
-        memcpy(f->buffer+(f->ptr%BLOCK_SIZE), data+local_ptr, 128-(f->ptr%BLOCK_SIZE) );
-        local_ptr+= 128 - (f->ptr%BLOCK_SIZE);
-        f->ptr += local_ptr;
+
+        if( (size - local_ptr) < (128 - f->ptr%BLOCK_SIZE)  )
+            charToWrite = size - local_ptr;
+        else if( (size - local_ptr) > (128 - f->ptr%BLOCK_SIZE) )
+            charToWrite = 128 - f->ptr%BLOCK_SIZE;
+
+
+       
+
+        memcpy(f->buffer+(f->ptr%BLOCK_SIZE), data+local_ptr, charToWrite );
+        local_ptr+= charToWrite;
+        f->ptr += charToWrite;
         sgf_append_block(f);
+        printf("\n\x1B[32msgf_write: \x1B[33m%d \x1B[0m caracteres ecrits dans le bloc %d\n", charToWrite, f->last);
     }
     
-    printf("\n\x1B[32msgf_write: \x1B[33m%d \x1B[0mcaracteres ecrits\n", local_ptr);
+    printf("\n\x1B[32msgf_write: \x1B[33m%d \x1B[0mcaracteres ecrits au total\n", local_ptr);
 
     return 0;
 }
