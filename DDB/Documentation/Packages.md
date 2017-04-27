@@ -9,7 +9,8 @@ Nous avons vu dans la section précédente que si la plateforme Node est en soi 
 NB : Express est lui-même un module « décomposé », qui est livré avec un certain nombre de fonctionnalités et qui peut être « augmenté » par de nombreux et divers sous-modules. Pour plus d’informations au sujet de ce module, ses possibilités et ses « sous-modules » nous vous invitons à consulter la page officielle du package, dont le lien est fourni dans la section finale « Bibliographie ». 
 Nous présenterons uniquement les deux fonctionnalités utilisées dans le cadre de notre serveur. 
 
-* La première concerne la **« gestion des routes »**. En effet, Node seul permet de servir les fichiers au client à partir d’une requête précise, mais force est de reconnaitre que cela devient relativement compliqué et peu pratique lorsque les différentes requêtes à traiter se multiplient et se complexifient. Express (et c’est là une des raisons de sa popularité) permet de gérer tout cela de manière simplifiée et automatisée avec un système de routes. 
+### La gestion des routes (URLs)
+La première concerne la **« gestion des routes »**. En effet, Node seul permet de servir les fichiers au client à partir d’une requête précise, mais force est de reconnaitre que cela devient relativement compliqué et peu pratique lorsque les différentes requêtes à traiter se multiplient et se complexifient. Express (et c’est là une des raisons de sa popularité) permet de gérer tout cela de manière simplifiée et automatisée avec un système de routes. 
 Ainsi en deux lignes seulement on peut indiquer au serveur « Pour telle requête, tu envoi tel fichier ».
 
     Initialisation : 
@@ -40,8 +41,8 @@ Ainsi en deux lignes seulement on peut indiquer au serveur « Pour telle requêt
     Il suffit de préciser un répertoire par défaut, dans lequel on mettra tous les fichiers que le client est en mesure d’exiger, et Express se chargera de les envoyer si la page demandée par le client est liée à un ou plusieurs de ces fichiers.
     Il existe d’autres manières, simples également, de gérer des cas plus complexes (plusieurs dossiers de fichiers à servir par défaut par exemple) mais dans notre cas cette solution est adaptée et idéale.
 
-
-* La deuxième fonctionnalité qui nous intéresse avec Express est liée aux cookies, ou pour être exact aux « variables de session ». En effet, on souhaite pouvoir conserver des informations pour une session d’utilisation (une session commence lors d’une visite depuis une IP X avec un navigateur Y). 
+### Les cookies (variables de session)
+La deuxième fonctionnalité qui nous intéresse avec Express est liée aux cookies, ou pour être exact aux « variables de session ». En effet, on souhaite pouvoir conserver des informations pour une session d’utilisation (une session commence lors d’une visite depuis une IP X avec un navigateur Y). 
 Ainsi, on peut gérer le cas suivant : une fois que l’utilisateur s’est identifié, il peut naviguer sur le site en restant connecté. S’il accède à la section « Compte » on lui affiche non pas la page d’accueil mais la page « Mon compte » avec toutes ses informations personnelles, par exemple.  
 
     Initialisation : 
