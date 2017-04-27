@@ -1,9 +1,14 @@
 # DROP DA BOMB
 
 1. [Le jeu](#le-jeu)
-2. [Les principaux aspects du jeu](#les-principaux-aspects-du-jeu-en-détail)
-3. [Utilisation du site / jeu](#utilisation-du-site)
-4. [Les fonctionnalités](#les-fonctionnalités)
+2. [Utilisation du site](#utilisation-du-site)
+3. [Les Regles](https://github.com/LucasL13/WORK-L3/tree/master/DDB/Documentation/LesRegles.md)
+4. [Les Cartes](https://github.com/LucasL13/WORK-L3/tree/master/DDB/Documentation/LesCartes.md)
+5. [L'interface](https://github.com/LucasL13/WORK-L3/tree/master/DDB/Documentation/Interface.md)
+6. [Les packages et technologies utilisés](https://github.com/LucasL13/WORK-L3/tree/master/DDB/Documentation/Packages.md)
+7. [Les aspects techniques]()
+8. [La gestion de projet]()
+9. [Les fonctionnalités](#les-fonctionnalités)
 
 ## Le jeu
 
@@ -21,12 +26,6 @@ Ce projet concerne donc la réalisation de ce jeu ainsi que de toutes ses compos
 -	Réalisation d’une interface web pour administrateurs (optionnel)
 A plus long terme, les objectifs sont de développer une version « application » pour smartphones, ainsi que de maintenir et faire évoluer le jeu au travers de nouveaux contenus, nouveaux modes de jeux, évènements, etc... 
 
-
-## Les principaux aspects du jeu, en détail
-
-* [Les Regles](https://github.com/LucasL13/WORK-L3/tree/master/DDB/Documentation/LesRegles.md)
-* [Les Cartes](https://github.com/LucasL13/WORK-L3/tree/master/DDB/Documentation/LesCartes.md)
-* [L'interface](https://github.com/LucasL13/WORK-L3/tree/master/DDB/Documentation/Interface.md)
 
 ## Utilisation du site
 
@@ -58,5 +57,4 @@ Si vous êtes un nouvel utilisateur, voici comment jouer en quelques étapes seu
 * Interface web pour la Boutique
 * Amélioration de l'UI du jeu 
 * Creation de nouveaux contenus (cartes, modes de jeu, icônes, etc..)
-
-## Navigation et 
+ 
