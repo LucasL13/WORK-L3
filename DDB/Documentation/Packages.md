@@ -15,18 +15,18 @@ Ainsi en deux lignes seulement on peut indiquer au serveur « Pour telle requêt
 
     Initialisation : 
 
-    ``` javascript
-        var express = require('express');
-        var app = express();
-    ```
+``` javascript
+    var express = require('express');
+    var app = express();
+```
 
     (Exemple) Lorsque l’utilisateur veut accéder à monSite/Account, on lui renvoi la page générée apres "rendering" du fichier Account (voir la section [Jade](#jade)) :
 
-    ``` javascript
+``` javascript
     app.get('/Account', function(req,res){
         res.render('Account');
     });
-    ```
+```
 
     On fait cela pour toutes les routes, tous les fichiers, que l’on souhaite desservir au client.
     Un autre aspect incroyable du système de routes par Express est la gestion des ressources liées auxdits fichiers. En effet, avec Node seul si on renvoi une page, disons index.html, mais que celle-ci importe 2 scripts, 2 images et 3 feuilles de styles, on doit alors créer un « chemin » pour chacun de ces fichiers, les ouvrir et les renvoyer en adaptant précisément le contenu de la requête de renvoi. 
@@ -34,9 +34,9 @@ Ainsi en deux lignes seulement on peut indiquer au serveur « Pour telle requêt
 
     Avec Express, encore une fois, on peut le faire en… 1 ligne seulement : 
 
-    ``` javascript
+``` javascript
         app.use(express.static(path.resolve('../')));
-    ```
+```
 
     Il suffit de préciser un répertoire par défaut, dans lequel on mettra tous les fichiers que le client est en mesure d’exiger, et Express se chargera de les envoyer si la page demandée par le client est liée à un ou plusieurs de ces fichiers.
     Il existe d’autres manières, simples également, de gérer des cas plus complexes (plusieurs dossiers de fichiers à servir par défaut par exemple) mais dans notre cas cette solution est adaptée et idéale.
@@ -46,7 +46,7 @@ La deuxième fonctionnalité qui nous intéresse avec Express est liée aux cook
 Ainsi, on peut gérer le cas suivant : une fois que l’utilisateur s’est identifié, il peut naviguer sur le site en restant connecté. S’il accède à la section « Compte » on lui affiche non pas la page d’accueil mais la page « Mon compte » avec toutes ses informations personnelles, par exemple.  
 
     Initialisation : 
-     ``` javascript
+``` javascript
         var bodyParser = require('body-parser');
         var expressSession = require('express-session');
         var cookieParser = require('cookie-parser');
@@ -56,4 +56,4 @@ Ainsi, on peut gérer le cas suivant : une fois que l’utilisateur s’est iden
         app.use(cookieParser());
         app.use(bodyParser.json());
         app.use(bodyParser.urlencoded({extended:true}));
-    ```
+```
