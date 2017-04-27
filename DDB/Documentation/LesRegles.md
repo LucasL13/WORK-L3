@@ -1,6 +1,12 @@
 # DROP DA BOMB 
 ## Les regles du jeu
 
+## Sommaire
+1. [Principe Général](###Principe général)
+2. [La zone de jeu](### La zone du jeu)
+
+
+
 ### Principe général
 DropDaBomb est un TBS (jeu de stratégie au tour par tour) de cartes en ligne. Les affrontements se font en un contre un, les joueurs pouvant utiliser des cartes en échange de ressources, de la poudre principalement, pour essayer de prendre le dessus sur son adversaire, jusqu'à qu'un joueur amène la barre de vie à 150 et fasse ainsi exploser la bombe principale dans le camp de son opposant.
 
@@ -18,17 +24,17 @@ Lors de l'ouverture des hostilités, chaque joueur pioche aléatoirement 4 carte
 Les mains sont constituées des cartes que le joueur peut utiliser lors de son tour. Une main remplie est composée au plus de 4 cartes.
 Chaque carte utilisée revient dans le Deck du joueur, en dernière position.
 
-### La poudre :
+### La poudre
 Les cartes de la main sont principalement activables en échange d'une certaine quantité d'une ressource : la poudre. Chaque joueur démarre avec une certaine quantité de poudre, et en utilise pour activer ses cartes.
 La poudre est une ressource rare : l'utiliser à bon escient est bien souvent un facteur de victoire.
 
-### Les tours :
+### Les tours
 Les combats se déroulent au tour par tour. Le joueur qui commence à jouer en premier est désigné aléatoirement. Le joueur qui commence en deuxième gagne 5 unités de poudre en guise de compensation.
 Chaque tour dure au plus 15 secondes, après lesquelles le joueur finit obligatoirement son tour. Durant ce laps de temps, le joueur peut activer autant de cartes qu'il n'en possède dans sa main, s'il possède assez de ressources pour cela.
 A la fin de chacun de ses tours, le joueur qui vient de finir gagne 5 unités de poudre et pioche assez de cartes pour remplir sa main et donc commencer son prochain tour avec 4 cartes. Cette pioche suit le principe d'une file :
 Les cartes qui ont passées le plus de temps dans le deck sont piochées en priorité. Ainsi, le tirage des cartes est toujours cyclique.
 
-### Les types de cartes :
+### Les types de cartes
 Il existe, à ce jour, deux types de cartes, divisés ensuite en sous-groupes :
   * Les cartes instantanées :
 
@@ -68,7 +74,7 @@ Il existe, à ce jour, deux types de cartes, divisés ensuite en sous-groupes :
     + Les sorts persistants : ce sont des sorts qui restent actifs tant qu'ils ne sont pas détruits, et se déclenchent dès qu'ils le peuvent.
 
 
-### La zone du jeu :
+### La zone du jeu
 
 La zone de jeu se découpe de prime abord en 7 zones :
 
