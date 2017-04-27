@@ -18,7 +18,7 @@ Ainsi en deux lignes seulement on peut indiquer au serveur « Pour telle requêt
         var app = express();
     ```
 
-    (Exemple)Ensuite lorsque l’utilisateur veut accéder à monSite/AccountCreate, on lui renvoi la page AccountCreate.html. 
+    (Exemple) Ensuite lorsque l’utilisateur veut accéder à monSite/Account, on lui renvoi la page généré apres "rendering" du fichier Account (voir la section [Jade](#jade)) :
     ``` javascript
     app.get('/Account', function(req,res){
         res.render('Account');
