@@ -141,3 +141,18 @@ Cette page contient les quelques lignes suivantes :
                 else
                     include AccountHome.jade
 ``` 
+
+On constate ainsi trois choses : 
+-	Avec Jade on peut inclure du code d’autres fichiers .jade, ainsi on peut alléger le code et le rendre plus universel en « exportant » les portions de code communes à toutes les pages, comme c’est le cas pour une partie de la section « head » (importation des feuilles de style, de jquery, etc..) 
+
+-	Dans la partie « contenu » de notre code HTML (#GUI_CONTENT) à renvoyer on ajoute soit le contenu du fichier AccountMenu.jade soit de AccountHome.jade selon que l’utilisateur s’est déjà connecté ou non. 
+
+- Une syntaxe allegée (par rapport au HTML classique) et lisible
+
+Dans les pages AccountMenu.jade et AccountHome.jade on a le code HTML (Jade en l’occurrence, mais qui sera traduit en du HTML) qui correspond aux pages « Se connecter ou créer un compte » et « Mon compte ». 
+
+En résumé, les principales caractéristiques de Jade sont : 
+-	Syntaxe très claire et simplifiée 
+-	Traitements algorithmiques tels que les boucles ou les tests
+-	Passage d’informations utilisables dans le code Jade au format JSON lors du rendering
+-	Possibilité de découper le code et de créer des portions réutilisables via les « include »
