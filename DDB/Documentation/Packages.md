@@ -2,6 +2,11 @@
 
 # Les packages et technologies utilisés
 
+1. [Express](#express)
+2. [MySQL](#mysql)
+3. [Jade](#jade)
+4. [Socket.io](#socket.io)
+
 ## Express 
 
 Le module [**Express**](http://expressjs.com/fr/) est probablement le module le plus populaire et le plus utilisé pour Node. 
@@ -108,6 +113,7 @@ Le module [**Jade**](https://www.npmjs.com/package/jade) est un moteur de *templ
 Dans notre situation (on rappelle que l’on souhaite développer un client et un serveur uniquement basé sur Javascript) Jade apparait comme une merveilleuse solution. En effet, pour servir au client des pages dynamiques (pas des pages avec du contenu dynamique, on parle ici de pages dont le contenu est différent selon le contexte) Node seul ne propose aucune solution viable. 
 
 Jade permet donc d’écrire des pages .jade qui seront compilées par le moteur de « rendering » de Node qui les « traduira » en du pur HTML à renvoyer au client. De plus, on peut fournir à ce moteur de rendering des informations, au format JSON, qui seront donc traitable via le code Jade.
+
 La syntaxe de Jade intègre donc tous les composants du HTML, en rajoutant la plupart des composantes algorithmiques classiques telles que les structures de contrôle, les boucles et les variables. De plus la syntaxe de Jade est simple, claire et permet même une productivité accrue dans l’écriture de pages HTML. 
 
 En guise d’exemple, on va parler du cas de la page Account(ou plutôt de la « route », voir la section [Express](#express)). La partie de notre site relative aux Comptes comporte deux aspects :
@@ -157,3 +163,8 @@ En résumé, les principales caractéristiques de Jade sont :
 -	Traitements algorithmiques tels que les boucles ou les tests
 -	Passage d’informations utilisables dans le code Jade au format JSON lors du rendering
 -	Possibilité de découper le code et de créer des portions réutilisables via les « include »
+
+
+## Socket.io 
+
+### More incoming.
