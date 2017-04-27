@@ -1,4 +1,6 @@
-# DROP DA BOMB
+<p align="center">
+    <h1> DROP DA BOMB </h1>
+</p>
 ## Les aspects techniques
 
 ### La structure du projet
