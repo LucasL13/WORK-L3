@@ -1,14 +1,16 @@
 # DROP DA BOMB 
 ## Les regles du jeu
 
-1. DropDaBomb est un TBS (jeu de stratégie au tour par tour) de cartes en ligne. Les affrontements se font en un contre un, les joueurs pouvant utiliser des cartes en échange de ressources, de la poudre principalement, pour essayer de prendre le dessus sur son adversaire, jusqu'à qu'un joueur amène la barre de vie à 150 et fasse ainsi exploser la bombe principale dans le camp de son opposant.
+### Principe général
+DropDaBomb est un TBS (jeu de stratégie au tour par tour) de cartes en ligne. Les affrontements se font en un contre un, les joueurs pouvant utiliser des cartes en échange de ressources, de la poudre principalement, pour essayer de prendre le dessus sur son adversaire, jusqu'à qu'un joueur amène la barre de vie à 150 et fasse ainsi exploser la bombe principale dans le camp de son opposant.
 
 
 
-2. Dans DropDaBomb, les joueurs se partagent une unique barre de vie. Quand un joueur inflige des dégâts, on dira qu'il pousse la barre de vie vers l'adversaire : ses points de vie augmente, et ceux de l'adversaire diminue.
+### Barre de vie
+Dans DropDaBomb, les joueurs se partagent une unique barre de vie. Quand un joueur inflige des dégâts, on dira qu'il pousse la barre de vie vers l'adversaire : ses points de vie augmente, et ceux de l'adversaire diminue.
 Dès qu'un joueur atteint 150 points de vie, ce qui équivaut à faire attendre -150 points de vie à l'adversaire, alors il gagne la partie.
 
-3. Les mains et decks :
+### Les mains et decks :
 Avant de rechercher un adversaire, chaque joueur constitue un Deck de 8 cartes qu'il utilisera lors de ses combats. Le joueur peut changer la composition de son Deck entre chaque match comme bon lui semble, en respectant les règles suivantes :
   * Le joueur doit posséder toutes les cartes dans son Deck;
   * Chaque carte ne peut être présente qu'une seule fois par Deck
@@ -16,7 +18,7 @@ Lors de l'ouverture des hostilités, chaque joueur pioche aléatoirement 4 carte
 Les mains sont constituées des cartes que le joueur peut utiliser lors de son tour. Une main remplie est composée au plus de 4 cartes.
 Chaque carte utilisée revient dans le Deck du joueur, en dernière position.
 
-4. La poudre :
+### La poudre :
 Les cartes de la main sont principalement activables en échange d'une certaine quantité d'une ressource : la poudre. Chaque joueur démarre avec une certaine quantité de poudre, et en utilise pour activer ses cartes.
 La poudre est une ressource rare : l'utiliser à bon escient est bien souvent un facteur de victoire.
 
@@ -26,25 +28,25 @@ Chaque tour dure au plus 15 secondes, après lesquelles le joueur finit obligato
 A la fin de chacun de ses tours, le joueur qui vient de finir gagne 5 unités de poudre et pioche assez de cartes pour remplir sa main et donc commencer son prochain tour avec 4 cartes. Cette pioche suit le principe d'une file :
 Les cartes qui ont passées le plus de temps dans le deck sont piochées en priorité. Ainsi, le tirage des cartes est toujours cyclique.
 
-6. Les types de cartes :
+### Les types de cartes :
 Il existe, à ce jour, deux types de cartes, divisés ensuite en sous-groupes :
-  a) Les cartes instantanées :
+  * Les cartes instantanées :
 
       Ce sont les cartes qui ont un effet instantanément à la pose. Elles sont utilisables à volonté dès lors que le joueur les détient dans sa main et possède assez de poudres pour les activer.
       Parmi celles-ci, on retrouve par exemple :
-        -> Les bombes directs : dès la pose, ces cartes infligent un certain montant de dégâts, et poussant la barre de vie vers l'adversaire.
-        -> Les boucliers : dès la pose, ces cartes remplissent une jauge de protection propre au joueur : tant que celle-ci n'est pas consumée, en absorbant une quantité de dégâts par exemple, la barre de vie ne peut pas être poussée vers le joueur.
-        -> Les sorts instantanés : dès la pose, ces cartes ont un effet divers sur le cours de la partie, de la génération d'une nouvelle main à la copie d'une carte de l'adversaire en passant par la désintégration d'une carte persistante adverse.
+        * * Les bombes directs : dès la pose, ces cartes infligent un certain montant de dégâts, et poussant la barre de vie vers l'adversaire.
+        * * Les boucliers : dès la pose, ces cartes remplissent une jauge de protection propre au joueur : tant que celle-ci n'est pas consumée, en absorbant une quantité de dégâts par exemple, la barre de vie ne peut pas être poussée vers le joueur.
+        * *  Les sorts instantanés : dès la pose, ces cartes ont un effet divers sur le cours de la partie, de la génération d'une nouvelle main à la copie d'une carte de l'adversaire en passant par la désintégration d'une carte persistante adverse.
 
-  b) Les cartes persistantes :
+ * Les cartes persistantes :
 
       Ce sont les cartes qui restent actives tant qu'on ne les a pas détruites. Ces cartes sont alors placées sur la zone de jeu, et ne peuvent être retirées que naturellement ou par l'utilisation d'un sort. Chaque joueur ne peut avoir que 5 cartes persistantes actives à la fois.
       Parmi celles-ci, on retrouve par exemple :
-        -> Les bombes à chargement : ce sont des bombes qui mettent deux tours à se charger. Au terme de ces deux tours de chargement, elles explosent et infligent un certain montant de dégâts. Si elles sont supprimées avant la fin de leurs chargements, ces bombes n'explosent pas et n'infligent donc aucun dommage.
-        -> Les bâtiments : ce sont des cartes persistantes qui ont un effet tous les tours tant qu'elles sont présentes sur la zone de jeu. Elles partagent les caractéristiques des cartes persistantes,
+        * * Les bombes à chargement : ce sont des bombes qui mettent deux tours à se charger. Au terme de ces deux tours de chargement, elles explosent et infligent un certain montant de dégâts. Si elles sont supprimées avant la fin de leurs chargements, ces bombes n'explosent pas et n'infligent donc aucun dommage.
+        * * Les bâtiments : ce sont des cartes persistantes qui ont un effet tous les tours tant qu'elles sont présentes sur la zone de jeu. Elles partagent les caractéristiques des cartes persistantes,
         Notamment la possibilité d'être désintégré, mais possèdent des points de vie, sont améliorables jusqu'à deux fois, et peuvent être aussi attaquer avec des bombes directes :
           - Si ses points de vie tombent à 0, le bâtiment perd un niveau d'amélioration, sauf s'il était au niveau 1 d'amélioration, auquel cas il est totalement détruit et supprimé de la zone de jeu.
           - Lors de l'amélioration d'un bâtiment, celui-ci devient plus efficace et plus robuste : ses effets périodiques sont plus puissants, il recharge ses points de vie, et obtient un bonus de points de vie. Un bâtiment ne peut pas dépasser le niveau 3 d'amélioration.
-        -> Les sorts persistants : ce sont des sorts qui restent actifs tant qu'ils ne sont pas détruits, et se déclenchent dès qu'ils le peuvent.
+        * * Les sorts persistants : ce sont des sorts qui restent actifs tant qu'ils ne sont pas détruits, et se déclenchent dès qu'ils le peuvent.
 
 
