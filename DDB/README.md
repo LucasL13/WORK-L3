@@ -1,5 +1,10 @@
 # DROP DA BOMB
 
+1. [Le jeu](#le-jeu)
+2. [Les principaux aspects du jeu](#les-principaux-aspects-du-jeu-,-en-détail)
+3. [Utilisation du site / jeu](#utilisation-du-site-/-jeu)
+4. [Les fonctionnalités](#les-fonctionnalités)
+
 ## Le jeu
 
 Drop Da Bomb est un jeu de plateau/cartes en ligne.
