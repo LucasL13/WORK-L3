@@ -13,23 +13,26 @@ Nous présenterons uniquement les deux fonctionnalités utilisées dans le cadre
 Ainsi en deux lignes seulement on peut indiquer au serveur « Pour telle requête, tu envoi tel fichier ».
 
     Initialisation : 
+
     ``` javascript
         var express = require('express');
         var app = express();
     ```
 
     (Exemple) Lorsque l’utilisateur veut accéder à monSite/Account, on lui renvoi la page généré apres "rendering" du fichier Account (voir la section [Jade](#jade)) :
-        ``` javascript
-        app.get('/Account', function(req,res){
-            res.render('Account');
-        });
-        ```
+
+    ``` javascript
+    app.get('/Account', function(req,res){
+        res.render('Account');
+    });
+    ```
 
     On fait cela pour toutes les routes, tous les fichiers, que l’on souhaite desservir au client.
     Un autre aspect incroyable du système de routes par Express est la gestion des ressources liées auxdits fichiers. En effet, avec Node seul si on renvoi une page, disons index.html, mais que celle-ci importe 2 scripts, 2 images et 3 feuilles de styles, on doit alors créer un « chemin » pour chacun de ces fichiers, les ouvrir et les renvoyer en adaptant précisément le contenu de la requête de renvoi. 
     C’est terriblement lourd et complexe à gérer manuellement.
 
-    Avec Express, encore une fois, on peut le faire en… 1 ligne seulement.
+    Avec Express, encore une fois, on peut le faire en… 1 ligne seulement : 
+
     ``` javascript
         app.use(express.static(path.resolve('../')));
     ```
