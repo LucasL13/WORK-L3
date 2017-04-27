@@ -19,5 +19,6 @@ A plus long terme, les objectifs sont de développer une version « application 
 
 ## Les principaux aspects du jeu, en détail : 
 
-* [Les regles](https://github.com/LucasL13/WORK-L3/tree/master/DDB/Documentation/LesRegles.md)
+* [Les Regles](https://github.com/LucasL13/WORK-L3/tree/master/DDB/Documentation/LesRegles.md)
 * [Les Cartes](https://github.com/LucasL13/WORK-L3/tree/master/DDB/Documentation/LesCartes.md)
+* [L'interface](https://github.com/LucasL13/WORK-L3/tree/master/DDB/Documentation/Interface.md)
