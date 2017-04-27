@@ -78,7 +78,7 @@ Il existe, à ce jour, deux types de cartes, divisés ensuite en sous-groupes :
     + Les sorts persistants : ce sont des sorts qui restent actifs tant qu'ils ne sont pas détruits, et se déclenchent dès qu'ils le peuvent.
 
 
-### La zone du jeu
+### La zone de jeu
 
 La zone de jeu se découpe de prime abord en 7 zones :
 
