@@ -4,7 +4,7 @@
 
 ## Express 
 
-Le module [**Express**](http://expressjs.com/fr/) (package npm) est probablement le module le plus populaire et le plus utilisé pour Node. 
+Le module [**Express**](http://expressjs.com/fr/) est probablement le module le plus populaire et le plus utilisé pour Node. 
 Nous avons vu dans la section précédente que si la plateforme Node est en soi un noyau simple et aux fonctionnalités limités, elle devient en revanche d’une incroyable puissante si on prend en compte les modules que l’on peut y ajouter. Express apparait comme l’un de ces modules qui rend Node si populaire, puissant et agréable à utiliser ; ce module agit comme une « surcouche » et permet d’ajouter (et/ou remplacer) des fonctionnalités très intéressantes à notre serveur. 
 NB : Express est lui-même un module « décomposé », qui est livré avec un certain nombre de fonctionnalités et qui peut être « augmenté » par de nombreux et divers sous-modules. Pour plus d’informations au sujet de ce module, ses possibilités et ses « sous-modules » nous vous invitons à consulter la page officielle du package, dont le lien est fourni dans la section finale « Bibliographie ». 
 Nous présenterons uniquement les deux fonctionnalités utilisées dans le cadre de notre serveur. 
@@ -61,7 +61,7 @@ Initialisation :
 
 ## MySQL
 
-Le module MySQL (package npm) est comme son nom l’indique un module qui permet de travailler avec une base de données MySQL.
+Le module [**MySQL**](https://www.npmjs.com/package/mysql) est comme son nom l’indique un module qui permet de travailler avec une base de données MySQL.
 Dans notre projet nous nous en servons essentiellement pour faire des requêtes à la base de données, notamment dans les situations suivantes : 
 -	Vérifier les informations de connexion d’un client
 -	Ajouter un compte client après vérification du formulaire d’inscription
@@ -69,7 +69,8 @@ Dans notre projet nous nous en servons essentiellement pour faire des requêtes 
 -	Afficher les informations d’un compte 
 -	Récupérer le contenu du Deck actif pour la participation d’un joueur à un match
 
-Le fonctionnement d’une transaction est des plus classiques : 
+Le fonctionnement d’une transaction est des plus classiques.
+
 (Exemple) On commence par créer une « connexion » : 
 
 ``` javascript
@@ -97,3 +98,46 @@ Le fonctionnement d’une transaction est des plus classiques :
             inventaire.push(rows[i]);
     });
 ```
+
+
+## Jade
+
+
+Le module [**Jade**](https://www.npmjs.com/package/jade) est un moteur de *templating* crée essentiellement pour être utilisé en collaboration avec Node. Si Node remplace les langages coté serveur les plus puissants comme PHP, il demeure certain aspect pour lesquels Node est « incompétent ». 
+
+Dans notre situation (on rappelle que l’on souhaite développer un client et un serveur uniquement basé sur Javascript) Jade apparait comme une merveilleuse solution. En effet, pour servir au client des pages dynamiques (pas des pages avec du contenu dynamique, on parle ici de pages dont le contenu est différent selon le contexte) Node seul ne propose aucune solution viable. 
+
+Jade permet donc d’écrire des pages .jade qui seront compilées par le moteur de « rendering » de Node qui les « traduira » en du pur HTML à renvoyer au client. La syntaxe de Jade intègre donc tous les composants du HTML, en rajoutant la plupart des composantes algorithmiques classiques telles que les structures de contrôle, les boucles et les variables. De plus la syntaxe de Jade est simple, claire et permet même une productivité accrue dans l’écriture de pages HTML. 
+
+En guise d’exemple, on va parler du cas de la page Account(ou plutôt de la « route », voir la section [Express](#express)). La partie de notre site relative aux Comptes comporte deux aspects :
+-	L’accueil (« se connecter ou créer un compte »)
+-	L’affichage de « mon compte »
+
+Si on utilise Node seul, l’unique solution qui s’offre à nous est de disposer de différentes routes tels que *« monSite/AccountMenu »* et *« monSite/AccountHome »* avec leurs fichiers propres.
+Cette solution n’est pas idéale, on aimerait disposer d’une seule route *« monSite/Account »* qui affiche le contenu adapté selon le contexte (afficher les informations de mon compte quand je suis connecté, une page de sign-in/sign-up sinon). 
+Avec Jade et l’utilisation des *« cookies »* (variables de session, voir la section [Express](#express)) on a donc la structure suivante : 
+
+La route Account qui dispose d’un simple « renvoi » de la page Account.jade : 
+
+``` javascript
+       app.get('/Account', function(req,res){
+           res.render('Account, req.session.account);
+       });
+```
+
+Cette page contient les quelques lignes suivantes : 
+
+``` html
+    html
+        head
+            include templates/template_head
+
+        body
+            include templates/template_nav
+
+            #GUI_CONTENT.row
+                if pseudo == undefined
+                    include AccountMenu.jade
+                else
+                    include AccountHome.jade
+``` 
