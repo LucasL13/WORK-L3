@@ -121,13 +121,13 @@ La route Account qui dispose d’un simple « renvoi » de la page Account.jade 
 
 ``` javascript
        app.get('/Account', function(req,res){
-           res.render('Account, req.session.account);
+           res.render('Account', req.session.account);
        });
 ```
 
 Cette page contient les quelques lignes suivantes : 
 
-``` html
+``` javascript
     html
         head
             include templates/template_head
