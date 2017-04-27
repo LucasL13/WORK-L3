@@ -13,14 +13,14 @@ Nous présenterons uniquement les deux fonctionnalités utilisées dans le cadre
 La première concerne la **« gestion des routes »**. En effet, Node seul permet de servir les fichiers au client à partir d’une requête précise, mais force est de reconnaitre que cela devient relativement compliqué et peu pratique lorsque les différentes requêtes à traiter se multiplient et se complexifient. Express (et c’est là une des raisons de sa popularité) permet de gérer tout cela de manière simplifiée et automatisée avec un système de routes. 
 Ainsi en deux lignes seulement on peut indiquer au serveur « Pour telle requête, tu envoi tel fichier ».
 
-    Initialisation : 
+Initialisation : 
 
 ``` javascript
     var express = require('express');
     var app = express();
 ```
 
-    (Exemple) Lorsque l’utilisateur veut accéder à monSite/Account, on lui renvoi la page générée apres "rendering" du fichier Account (voir la section [Jade](#jade)) :
+(Exemple) Lorsque l’utilisateur veut accéder à monSite/Account, on lui renvoi la page générée apres "rendering" du fichier Account (voir la section [Jade](#jade)) :
 
 ``` javascript
     app.get('/Account', function(req,res){
@@ -28,24 +28,24 @@ Ainsi en deux lignes seulement on peut indiquer au serveur « Pour telle requêt
     });
 ```
 
-    On fait cela pour toutes les routes, tous les fichiers, que l’on souhaite desservir au client.
-    Un autre aspect incroyable du système de routes par Express est la gestion des ressources liées auxdits fichiers. En effet, avec Node seul si on renvoi une page, disons index.html, mais que celle-ci importe 2 scripts, 2 images et 3 feuilles de styles, on doit alors créer un « chemin » pour chacun de ces fichiers, les ouvrir et les renvoyer en adaptant précisément le contenu de la requête de renvoi. 
+ On fait cela pour toutes les routes, tous les fichiers, que l’on souhaite desservir au client.
+Un autre aspect incroyable du système de routes par Express est la gestion des ressources liées auxdits fichiers. En effet, avec Node seul si on renvoi une page, disons index.html, mais que celle-ci importe 2 scripts, 2 images et 3 feuilles de styles, on doit alors créer un « chemin » pour chacun de ces fichiers, les ouvrir et les renvoyer en adaptant précisément le contenu de la requête de renvoi. 
     C’est terriblement lourd et complexe à gérer manuellement.
 
-    Avec Express, encore une fois, on peut le faire en… 1 ligne seulement : 
+Avec Express, encore une fois, on peut le faire en… 1 ligne seulement : 
 
 ``` javascript
         app.use(express.static(path.resolve('../')));
 ```
 
-    Il suffit de préciser un répertoire par défaut, dans lequel on mettra tous les fichiers que le client est en mesure d’exiger, et Express se chargera de les envoyer si la page demandée par le client est liée à un ou plusieurs de ces fichiers.
-    Il existe d’autres manières, simples également, de gérer des cas plus complexes (plusieurs dossiers de fichiers à servir par défaut par exemple) mais dans notre cas cette solution est adaptée et idéale.
+Il suffit de préciser un répertoire par défaut, dans lequel on mettra tous les fichiers que le client est en mesure d’exiger, et Express se chargera de les envoyer si la page demandée par le client est liée à un ou plusieurs de ces fichiers.
+Il existe d’autres manières, simples également, de gérer des cas plus complexes (plusieurs dossiers de fichiers à servir par défaut par exemple) mais dans notre cas cette solution est adaptée et idéale.
 
 ### Les cookies (variables de session)
 La deuxième fonctionnalité qui nous intéresse avec Express est liée aux cookies, ou pour être exact aux « variables de session ». En effet, on souhaite pouvoir conserver des informations pour une session d’utilisation (une session commence lors d’une visite depuis une IP X avec un navigateur Y). 
 Ainsi, on peut gérer le cas suivant : une fois que l’utilisateur s’est identifié, il peut naviguer sur le site en restant connecté. S’il accède à la section « Compte » on lui affiche non pas la page d’accueil mais la page « Mon compte » avec toutes ses informations personnelles, par exemple.  
 
-    Initialisation : 
+Initialisation : 
 ``` javascript
         var bodyParser = require('body-parser');
         var expressSession = require('express-session');
