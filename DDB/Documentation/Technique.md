@@ -2,4 +2,4 @@
 ## Les aspects techniques
 
 ### La structure du projet
-![alt text](WORK-L3/DDB/Documentation/Documentation Officielle/SCHEMA_STRUCTURE.png)
+![alt text](https://github.com/LucasL13/WORK-L3/blob/master/DDB/Documentation/Documentation%20Officielle/SCHEMA_STRUCTURE.png "Logo Title Text 1")
