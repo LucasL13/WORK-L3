@@ -1,2 +1,2 @@
-# `<font style="color:blue">` DROP DA BOMB `</font>`
+# `<font color="red">` DROP DA BOMB `</font>`
 ## Les regles du jeu
