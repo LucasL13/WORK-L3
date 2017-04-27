@@ -6,8 +6,8 @@
 4. [Les Cartes](https://github.com/LucasL13/WORK-L3/tree/master/DDB/Documentation/LesCartes.md)
 5. [L'interface](https://github.com/LucasL13/WORK-L3/tree/master/DDB/Documentation/Interface.md)
 6. [Les packages et technologies utilisés](https://github.com/LucasL13/WORK-L3/tree/master/DDB/Documentation/Packages.md)
-7. [Les aspects techniques]()
-8. [La gestion de projet]()
+7. [Les aspects techniques](https://github.com/LucasL13/WORK-L3/tree/master/DDB/Documentation/Technique.md)
+8. [La gestion de projet](https://github.com/LucasL13/WORK-L3/tree/master/DDB/Documentation/GestionProjet.md)
 9. [Les fonctionnalités](#les-fonctionnalités)
 
 ## Le jeu
