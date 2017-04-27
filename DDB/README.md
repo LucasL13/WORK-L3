@@ -1,4 +1,21 @@
-# Projet jeu en ligne : DROP DA BOMB
+# DROP DA BOMB
+
+## Le jeu
+
+Drop Da Bomb est un jeu de plateau/cartes en ligne.
+Il se base sur un ensemble de cartes (Cartes) collectionnables (Inventaire) par un joueur (Compte) afin de composer une ou plusieurs « main de jeu » (Deck). 
+Ces cartes peuvent être obtenues de diverses manières mais principalement via la boutique (Shop) qui permet d’acheter avec différentes monnaies des lots de cartes (Packs). Il existe différents types et raretés pour les cartes. 
+Une partie (Match) oppose deux joueurs, dans une arène spécifique avec des règles et des modes de jeu précis ; à tour de rôle les joueurs peuvent utiliser les cartes de leur Deck alors en main pour tenter de faire basculer l’objectif (« la bombe ») dans le camp de leur adversaire. 
+Si la bombe explose ou se trouve dans le camp d’un joueur à la fin du temps imparti, la partie est perdue par celui-ci ; elle est gagnée par l’autre qui pourra alors remporter des récompenses (Cartes, Monnaie Virtuelle, etc..).
+
+Ce jeu s’inspire par moments des jeux du même type devenus aujourd’hui des grands classiques (Yu-Gi-Oh, Clash Royale, HearthStone) mais se démarque par bien des aspects afin de se créer une véritable identité, un gameplay unique et tente de se faire sa place parmi les classiques cités précédemment. 
+
+Ce projet concerne donc la réalisation de ce jeu ainsi que de toutes ses composantes à savoir : 
+-	Réalisation du jeu pour clients web
+-	Réalisation d’une interface de gestion pour clients web
+-	Réalisation d’une interface web pour administrateurs (optionnel)
+A plus long terme, les objectifs sont de développer une version « application » pour smartphones, ainsi que de maintenir et faire évoluer le jeu au travers de nouveaux contenus, nouveaux modes de jeux, évènements, etc... 
+
 
 ## Les principaux aspects du jeu, en détail : 
 
