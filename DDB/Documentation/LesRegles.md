@@ -92,6 +92,11 @@ La zone de jeu se découpe de prime abord en 7 zones :
 
 ### Les modes de jeu
 
-En l’état, aucune limite de temps n’est fixée, et tous les joueurs quelques soit leurs niveaux peuvent se rencontrer. Dans les futures évolutions du jeu, des niveaux de joueurs seront créés, et des « arènes » différentes permettront aux joueurs de jouer uniquement contre des joueurs d’un même niveau. De plus, différents types de rencontres sont imaginables (matchs amicaux, matchs classiques, matchs de tournoi, etc…) avec pour chaque mode des règles spécifiques.
+
+Un mode de jeu unique pour la v1.
+
+En l’état, aucune limite de temps n’est fixée, et tous les joueurs quelques soit leurs niveaux peuvent se rencontrer. Dans les futures évolutions du jeu, des niveaux de joueurs seront créés, et des « arènes » différentes permettront aux joueurs de jouer uniquement contre des joueurs d’un même niveau.
+
+De plus, différents types de rencontres sont imaginables (matchs amicaux, matchs classiques, matchs de tournoi, etc…) avec pour chaque mode des règles spécifiques.
 
 Ces fonctionnalités concernent les prochaines versions du jeu, nous parlerons donc pour l’instant du seul mode de jeu disponible.
