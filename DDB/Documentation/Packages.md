@@ -19,7 +19,7 @@ Ainsi en deux lignes seulement on peut indiquer au serveur « Pour telle requêt
         var app = express();
     ```
 
-    (Exemple) Lorsque l’utilisateur veut accéder à monSite/Account, on lui renvoi la page généré apres "rendering" du fichier Account (voir la section [Jade](#jade)) :
+    (Exemple) Lorsque l’utilisateur veut accéder à monSite/Account, on lui renvoi la page générée apres "rendering" du fichier Account (voir la section [Jade](#jade)) :
 
     ``` javascript
     app.get('/Account', function(req,res){
@@ -35,4 +35,24 @@ Ainsi en deux lignes seulement on peut indiquer au serveur « Pour telle requêt
 
     ``` javascript
         app.use(express.static(path.resolve('../')));
+    ```
+
+    Il suffit de préciser un répertoire par défaut, dans lequel on mettra tous les fichiers que le client est en mesure d’exiger, et Express se chargera de les envoyer si la page demandée par le client est liée à un ou plusieurs de ces fichiers.
+    Il existe d’autres manières, simples également, de gérer des cas plus complexes (plusieurs dossiers de fichiers à servir par défaut par exemple) mais dans notre cas cette solution est adaptée et idéale.
+
+
+* La deuxième fonctionnalité qui nous intéresse avec Express est liée aux cookies, ou pour être exact aux « variables de session ». En effet, on souhaite pouvoir conserver des informations pour une session d’utilisation (une session commence lors d’une visite depuis une IP X avec un navigateur Y). 
+Ainsi, on peut gérer le cas suivant : une fois que l’utilisateur s’est identifié, il peut naviguer sur le site en restant connecté. S’il accède à la section « Compte » on lui affiche non pas la page d’accueil mais la page « Mon compte » avec toutes ses informations personnelles, par exemple.  
+
+    Initialisation : 
+     ``` javascript
+        var bodyParser = require('body-parser');
+        var expressSession = require('express-session');
+        var cookieParser = require('cookie-parser');
+
+        app.use(bodyParser());
+        app.use(expressSession({secret:'somesecrettokenhere'}));
+        app.use(cookieParser());
+        app.use(bodyParser.json());
+        app.use(bodyParser.urlencoded({extended:true}));
     ```
