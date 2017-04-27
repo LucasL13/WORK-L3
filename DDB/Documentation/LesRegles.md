@@ -1,9 +1,13 @@
 # DROP DA BOMB 
 ## Les regles du jeu
 
-## Sommaire
 1. [Principe Général](#principe-général)
-2. [La zone de jeu](#la-zone-du-jeu)
+2. [Barre de vie](#barre-de-vie)
+3. [Les mains et decks](#les-mains-et-decks)
+4. [La poudre](#la-poudre)
+5. [Les tours](#les-tours)
+6. [Les types de cartes](#les-types-de-cartes)
+7. [La zone de jeu](#la-zone-de-jeu)
 
 
 
@@ -16,7 +20,7 @@ DropDaBomb est un TBS (jeu de stratégie au tour par tour) de cartes en ligne. L
 Dans DropDaBomb, les joueurs se partagent une unique barre de vie. Quand un joueur inflige des dégâts, on dira qu'il pousse la barre de vie vers l'adversaire : ses points de vie augmente, et ceux de l'adversaire diminue.
 Dès qu'un joueur atteint 150 points de vie, ce qui équivaut à faire attendre -150 points de vie à l'adversaire, alors il gagne la partie.
 
-### Les mains et decks :
+### Les mains et decks
 Avant de rechercher un adversaire, chaque joueur constitue un Deck de 8 cartes qu'il utilisera lors de ses combats. Le joueur peut changer la composition de son Deck entre chaque match comme bon lui semble, en respectant les règles suivantes :
   * Le joueur doit posséder toutes les cartes dans son Deck;
   * Chaque carte ne peut être présente qu'une seule fois par Deck
