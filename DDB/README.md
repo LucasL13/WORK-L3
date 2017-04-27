@@ -3,8 +3,8 @@
 ## Le jeu
 
 Drop Da Bomb est un jeu de plateau/cartes en ligne.
-Il se base sur un ensemble de cartes (Cartes) collectionnables (Inventaire) par un joueur (Compte) afin de composer une ou plusieurs « main de jeu » (Deck). 
-Ces cartes peuvent être obtenues de diverses manières mais principalement via la boutique (Shop) qui permet d’acheter avec différentes monnaies des lots de cartes (Packs). Il existe différents types et raretés pour les cartes. 
+Il se base sur un ensemble de cartes (Cartes) collectionnables (**Inventaire**) par un joueur (**Compte**) afin de composer une ou plusieurs « main de jeu » (**Deck**). 
+Ces cartes peuvent être obtenues de diverses manières mais principalement via la boutique (**Shop**) qui permet d’acheter avec différentes monnaies des lots de cartes (**Packs**). Il existe différents types et raretés pour les cartes. 
 Une partie (Match) oppose deux joueurs, dans une arène spécifique avec des règles et des modes de jeu précis ; à tour de rôle les joueurs peuvent utiliser les cartes de leur Deck alors en main pour tenter de faire basculer l’objectif (« la bombe ») dans le camp de leur adversaire. 
 Si la bombe explose ou se trouve dans le camp d’un joueur à la fin du temps imparti, la partie est perdue par celui-ci ; elle est gagnée par l’autre qui pourra alors remporter des récompenses (Cartes, Monnaie Virtuelle, etc..).
 
@@ -22,3 +22,24 @@ A plus long terme, les objectifs sont de développer une version « application 
 * [Les Regles](https://github.com/LucasL13/WORK-L3/tree/master/DDB/Documentation/LesRegles.md)
 * [Les Cartes](https://github.com/LucasL13/WORK-L3/tree/master/DDB/Documentation/LesCartes.md)
 * [L'interface](https://github.com/LucasL13/WORK-L3/tree/master/DDB/Documentation/Interface.md)
+
+## Fonctionnalités 
+
+### Implementées
+
+* Interface web de connexion
+* Interface web de visualisation et de modification des decks
+* Matchmaking (8 salons - 16 joueurs max)
+* Client de jeu 
+
+### En cours d'implementation
+
+* Interface web de création de compte
+
+### A venir 
+
+* Interface web avancée pour la gestion de compte
+* Interface web pour les administrateurs
+* Interface web pour la Boutique
+* Amélioration de l'UI du jeu 
+* Creation de nouveaux contenus (cartes, modes de jeu, icônes, etc..)
