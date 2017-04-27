@@ -1,10 +1,12 @@
-<p align="center">
-    <h1> DROP DA BOMB </h1>
-</p>
+
+<h1 align="center"> DROP DA BOMB </h1>
+
 ## Les aspects techniques
 
 ### La structure du projet
-<p align="center"><img src="https://github.com/LucasL13/WORK-L3/blob/master/DDB/Documentation/Images/structure.png" width="600px"/></p>
+<p align="center">
+    <img src="https://github.com/LucasL13/WORK-L3/blob/master/DDB/Documentation/Images/structure.png" width="600px"/>
+</p>
 
 Le projet DropDaBomb est basé sur une architecture Client-Serveur classique. 
 Le client est un client web, il est donc ouvert à tous les systèmes d’exploitation, tous les navigateurs, quel que soit le support. 
