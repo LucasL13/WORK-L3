@@ -8,7 +8,7 @@
 5. [Les tours](#les-tours)
 6. [Les types de cartes](#les-types-de-cartes)
 7. [La zone de jeu](#la-zone-de-jeu)
-
+8. [Les modes de jeu](#les-modes-de-jeu)
 
 
 ### Principe général
@@ -90,3 +90,8 @@ La zone de jeu se découpe de prime abord en 7 zones :
   * Cette zone représente la barre de vie commune, ainsi que les jauges de protection de chacun des joueurs.
   * Cette zone indique quel joueur peut jouer ce tour, et combien de temps il lui reste.
 
+### Les modes de jeu
+
+En l’état, aucune limite de temps n’est fixée, et tous les joueurs quelques soit leurs niveaux peuvent se rencontrer. Dans les futures évolutions du jeu, des niveaux de joueurs seront créés, et des « arènes » différentes permettront aux joueurs de jouer uniquement contre des joueurs d’un même niveau. De plus, différents types de rencontres sont imaginables (matchs amicaux, matchs classiques, matchs de tournoi, etc…) avec pour chaque mode des règles spécifiques.
+
+Ces fonctionnalités concernent les prochaines versions du jeu, nous parlerons donc pour l’instant du seul mode de jeu disponible.
