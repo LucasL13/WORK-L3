@@ -36,10 +36,13 @@ Il existe, à ce jour, deux types de cartes, divisés ensuite en sous-groupes :
       Parmi celles-ci, on retrouve par exemple :
 
     + Les bombes directes : 
-        dès la pose, ces cartes infligent un certain montant de dégâts, et poussant la barre de vie vers l'adversaire.
-         Les boucliers : dès la pose, ces cartes remplissent une jauge de protection propre au joueur : tant que celle-ci n'est pas consumée, en absorbant une quantité de dégâts par exemple, la barre de vie ne peut pas être poussée vers le joueur.
+    Dès la pose, ces cartes infligent un certain montant de dégâts, et poussant la barre de vie vers l'adversaire.
+         
+    + Les boucliers : 
+    Dès la pose, ces cartes remplissent une jauge de protection propre au joueur : tant que celle-ci n'est pas consumée, en absorbant une quantité de dégâts par exemple, la barre de vie ne peut pas être poussée vers le joueur.
 
-    + Les sorts instantanés : dès la pose, ces cartes ont un effet divers sur le cours de la partie, de la génération d'une nouvelle main à la copie d'une carte de l'adversaire en passant par la désintégration d'une carte persistante adverse.
+    + Les sorts instantanés :
+    Dès la pose, ces cartes ont un effet divers sur le cours de la partie, de la génération d'une nouvelle main à la copie d'une carte de l'adversaire en passant par la désintégration d'une carte persistante adverse.
 
  * Les cartes persistantes :
 
