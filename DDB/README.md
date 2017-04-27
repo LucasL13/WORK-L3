@@ -27,7 +27,7 @@ A plus long terme, les objectifs sont de développer une version « application 
 
 Si vous êtes un nouvel utilisateur, voici comment jouer en quelques étapes seulement : 
 
-1. Se connecter au site : [](http://217.182.69.175/ddb/)
+1. Se connecter au site : [DDB](http://217.182.69.175/ddb/)
 2. Créer son compte 
 3. Jouer en cliquant sur le bouton "Jouer" de la barre de navigation
 4. Modifier son deck lorsque vous aurez acquis de nouvelles cartes dans la section **"Decks"**
