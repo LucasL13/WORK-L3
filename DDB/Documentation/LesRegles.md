@@ -34,19 +34,19 @@ Il existe, à ce jour, deux types de cartes, divisés ensuite en sous-groupes :
 
       Ce sont les cartes qui ont un effet instantanément à la pose. Elles sont utilisables à volonté dès lors que le joueur les détient dans sa main et possède assez de poudres pour les activer.
       Parmi celles-ci, on retrouve par exemple :
-        * * Les bombes directs : dès la pose, ces cartes infligent un certain montant de dégâts, et poussant la barre de vie vers l'adversaire.
-        * * Les boucliers : dès la pose, ces cartes remplissent une jauge de protection propre au joueur : tant que celle-ci n'est pas consumée, en absorbant une quantité de dégâts par exemple, la barre de vie ne peut pas être poussée vers le joueur.
-        * *  Les sorts instantanés : dès la pose, ces cartes ont un effet divers sur le cours de la partie, de la génération d'une nouvelle main à la copie d'une carte de l'adversaire en passant par la désintégration d'une carte persistante adverse.
+        * Les bombes directs : dès la pose, ces cartes infligent un certain montant de dégâts, et poussant la barre de vie vers l'adversaire.
+        * Les boucliers : dès la pose, ces cartes remplissent une jauge de protection propre au joueur : tant que celle-ci n'est pas consumée, en absorbant une quantité de dégâts par exemple, la barre de vie ne peut pas être poussée vers le joueur.
+        * Les sorts instantanés : dès la pose, ces cartes ont un effet divers sur le cours de la partie, de la génération d'une nouvelle main à la copie d'une carte de l'adversaire en passant par la désintégration d'une carte persistante adverse.
 
  * Les cartes persistantes :
 
       Ce sont les cartes qui restent actives tant qu'on ne les a pas détruites. Ces cartes sont alors placées sur la zone de jeu, et ne peuvent être retirées que naturellement ou par l'utilisation d'un sort. Chaque joueur ne peut avoir que 5 cartes persistantes actives à la fois.
       Parmi celles-ci, on retrouve par exemple :
-        * * Les bombes à chargement : ce sont des bombes qui mettent deux tours à se charger. Au terme de ces deux tours de chargement, elles explosent et infligent un certain montant de dégâts. Si elles sont supprimées avant la fin de leurs chargements, ces bombes n'explosent pas et n'infligent donc aucun dommage.
-        * * Les bâtiments : ce sont des cartes persistantes qui ont un effet tous les tours tant qu'elles sont présentes sur la zone de jeu. Elles partagent les caractéristiques des cartes persistantes,
+        * Les bombes à chargement : ce sont des bombes qui mettent deux tours à se charger. Au terme de ces deux tours de chargement, elles explosent et infligent un certain montant de dégâts. Si elles sont supprimées avant la fin de leurs chargements, ces bombes n'explosent pas et n'infligent donc aucun dommage.
+        * Les bâtiments : ce sont des cartes persistantes qui ont un effet tous les tours tant qu'elles sont présentes sur la zone de jeu. Elles partagent les caractéristiques des cartes persistantes,
         Notamment la possibilité d'être désintégré, mais possèdent des points de vie, sont améliorables jusqu'à deux fois, et peuvent être aussi attaquer avec des bombes directes :
           - Si ses points de vie tombent à 0, le bâtiment perd un niveau d'amélioration, sauf s'il était au niveau 1 d'amélioration, auquel cas il est totalement détruit et supprimé de la zone de jeu.
           - Lors de l'amélioration d'un bâtiment, celui-ci devient plus efficace et plus robuste : ses effets périodiques sont plus puissants, il recharge ses points de vie, et obtient un bonus de points de vie. Un bâtiment ne peut pas dépasser le niveau 3 d'amélioration.
-        * * Les sorts persistants : ce sont des sorts qui restent actifs tant qu'ils ne sont pas détruits, et se déclenchent dès qu'ils le peuvent.
+        * Les sorts persistants : ce sont des sorts qui restent actifs tant qu'ils ne sont pas détruits, et se déclenchent dès qu'ils le peuvent.
 
 
