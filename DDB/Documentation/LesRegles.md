@@ -59,7 +59,7 @@ Il existe, à ce jour, deux types de cartes, divisés ensuite en sous-groupes :
     + Les bâtiments : 
 
         Ce sont des cartes persistantes qui ont un effet tous les tours tant qu'elles sont présentes sur la zone de jeu. Elles partagent les caractéristiques des cartes persistantes,
-        Notamment la possibilité d'être désintégré, mais possèdent des points de vie, sont améliorables jusqu'à deux fois, et peuvent être aussi attaquer avec des bombes directes :
+        Notamment la possibilité d'être désintégrés, mais possèdent des points de vie, sont améliorables jusqu'à deux fois, et peuvent être aussi attaqués avec des bombes directes :
 
         * Si ses points de vie tombent à 0, le bâtiment perd un niveau d'amélioration, sauf s'il était au niveau 1 d'amélioration, auquel cas il est totalement détruit et supprimé de la zone de jeu.
 
@@ -67,4 +67,16 @@ Il existe, à ce jour, deux types de cartes, divisés ensuite en sous-groupes :
 
     + Les sorts persistants : ce sont des sorts qui restent actifs tant qu'ils ne sont pas détruits, et se déclenchent dès qu'ils le peuvent.
 
+
+### La zone du jeu :
+
+La zone de jeu se découpe de prime abord en 7 zones :
+
+  * Cette zone vous indique la quantité de poudre que le joueur possède actuellement.
+  * Cette zone représente la main du joueur : les cartes dans celles-ci, et sous chacune d'elle, son coût en poudre.
+  * Cette zone représente les cartes persistantes actives du joueur. Elle permet par exemple de visualiser le nombre de tours avant la fin du chargement des bombes ou les points de vie des bâtiments.
+  * Cette zone affiche la dernière carte utilisée.
+  * Cette zone représente les cartes persistantes actives de l'adversaire. Elle permet par exemple de visualiser le nombre de tours avant la fin du chargement des bombes ou les points de vie des bâtiments.
+  * Cette zone représente la barre de vie commune, ainsi que les jauges de protection de chacun des joueurs.
+  * Cette zone indique quel joueur peut jouer ce tour, et combien de temps il lui reste.
 
