@@ -2,8 +2,8 @@
 ## Les regles du jeu
 
 ## Sommaire
-1. [Principe Général](###Principe général)
-2. [La zone de jeu](### La zone du jeu)
+1. [Principe Général](###Principe-général)
+2. [La zone de jeu](###La-zone-du-jeu)
 
 
 
