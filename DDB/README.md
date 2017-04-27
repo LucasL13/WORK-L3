@@ -2,7 +2,7 @@
 
 1. [Le jeu](#le-jeu)
 2. [Les principaux aspects du jeu](#les-principaux-aspects-du-jeu-en-détail)
-3. [Utilisation du site / jeu](#utilisation-du-site-/-jeu)
+3. [Utilisation du site / jeu](#utilisation-du-site)
 4. [Les fonctionnalités](#les-fonctionnalités)
 
 ## Le jeu
@@ -28,7 +28,7 @@ A plus long terme, les objectifs sont de développer une version « application 
 * [Les Cartes](https://github.com/LucasL13/WORK-L3/tree/master/DDB/Documentation/LesCartes.md)
 * [L'interface](https://github.com/LucasL13/WORK-L3/tree/master/DDB/Documentation/Interface.md)
 
-## Utilisation du site / jeu 
+## Utilisation du site
 
 Si vous êtes un nouvel utilisateur, voici comment jouer en quelques étapes seulement : 
 
