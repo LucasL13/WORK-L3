@@ -1,4 +1,4 @@
-<h1 align="center" color="orange"> DROP DA BOMB </h1>
+<h1 align="center" style="color=orange"> DROP DA BOMB </h1>
 
 ## La gestion de projet
 
