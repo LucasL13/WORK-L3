@@ -5,9 +5,9 @@ Nous avons opté pour une organisation de projet **Agile**.
 
 Nous avons repris certains aspects de la methodologie **SCRUM**, à savoir l'organisation sous forme de *Sprints*.
 
-La durée de ces Sprints était variable et le temps de travail de chaque membre au sein d'un sprint pas toujours égal, il s'agit de choix volontaires afin de viser la **productivité**.
+La durée de ces *Sprints* était variable et le temps de travail de chaque membre au sein d'un sprint pas toujours égal, il s'agit de choix volontaires afin de viser la **productivité** optimale.
 
-En effet, les Sprints permettent d'avancer en fonction des priorités et des dépendances des taches, l'affectation des taches s'est faite en fonction du niveau de compétences de chaque membre afin de pouvoir avancer au plus vite.
+En effet, les *Sprints* permettent d'avancer en fonction des priorités et des dépendances des taches, l'affectation des taches s'est faite en fonction du niveau de compétences de chaque membre afin de pouvoir avancer au plus vite.
 
 ### Sprint 1
 
@@ -36,6 +36,7 @@ Nom | Description | Membre | Temps (en h)
 
 
 ### Sprint 4
+
 Nom | Description | Membre | Temps (en h)
 --------------- | -------------------| ---------------- | -----------------------
 **CONTENT1** | Création de la premiere "vague" de contenus (cartes, backgrounds, etc..) | Lucas | 8
