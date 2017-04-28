@@ -57,4 +57,10 @@ Si vous êtes un nouvel utilisateur, voici comment jouer en quelques étapes seu
 * Interface web pour la Boutique
 * Amélioration de l'UI du jeu 
 * Creation de nouveaux contenus (cartes, modes de jeu, icônes, etc..)
+
+
+[] aaa
+[] bbb
+[x] cccc
+[x] dddd
  
