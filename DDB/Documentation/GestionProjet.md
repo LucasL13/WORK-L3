@@ -1,9 +1,12 @@
 # DROP DA BOMB
 ## La gestion de projet
 
-Nous avons opté pour une organisation de projet "agile".
-Nous avons repris certains aspects de la Methodologie de SCRUM, à savoir l'organisation sous forme de sprints.
+Nous avons opté pour une organisation de projet **"agile"**.
+
+Nous avons repris certains aspects de la Methodologie **SCRUM**, à savoir l'organisation sous forme de sprints.
+
 La durée de ces sprints était variable et le temps de travail de chaque membre au sein d'un sprint pas toujours égale, il s'agit la de choix volontaires afin de viser la *rentabilité*.
+
 En effet, les sprints permettent d'avancer en fonction des priorités et des dépendances des taches, l'affectation des taches s'est faite en fonction du niveau de compétences de chaque membre afin de pouvoir avancer au plus vite.
 
 ### Sprint 1
