@@ -41,10 +41,10 @@ Si vous êtes un nouvel utilisateur, voici comment jouer en quelques étapes seu
 
 ### Implementées
 
-* Interface web de connexion
-* Interface web de visualisation et de modification des decks
-* Matchmaking (8 salons - 16 joueurs max)
-* Client de jeu 
+- [x] Interface web de connexion
+- [x] Interface web de visualisation et de modification des decks
+- [x]Matchmaking (8 salons - 16 joueurs max)
+- [x] Client de jeu 
 
 ### En cours d'implementation
 
@@ -57,10 +57,3 @@ Si vous êtes un nouvel utilisateur, voici comment jouer en quelques étapes seu
 * Interface web pour la Boutique
 * Amélioration de l'UI du jeu 
 * Creation de nouveaux contenus (cartes, modes de jeu, icônes, etc..)
-
-
-- [ ] aaa
-- [ ] bbb
-- [x] cccc
-- [x] dddd
- 
