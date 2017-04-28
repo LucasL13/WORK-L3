@@ -1,7 +1,7 @@
 # DROP DA BOMB
 ## La gestion de projet
 
-Nous avons opté pour une organisation de projet *"agile"*.
+Nous avons opté pour une organisation de projet **Agile**.
 
 Nous avons repris certains aspects de la methodologie **SCRUM**, à savoir l'organisation sous forme de *Sprints*.
 
