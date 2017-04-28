@@ -1,4 +1,5 @@
-# DROP DA BOMB
+<h1 align="center" color="orange"> DROP DA BOMB </h1>
+
 ## La gestion de projet
 
 Nous avons opté pour une organisation de projet **Agile**.
