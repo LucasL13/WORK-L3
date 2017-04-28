@@ -1,4 +1,4 @@
-# DROP DA BOMB
+<h1 align="center"> DROP DA BOMB </h1>
 
 1. [Le jeu](#le-jeu)
 2. [Utilisation du site](#utilisation-du-site)

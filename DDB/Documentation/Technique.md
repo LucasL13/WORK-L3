@@ -1,5 +1,4 @@
-
-<h1 align="center" color="orange"> DROP DA BOMB </h1>
+<h1 align="center"> DROP DA BOMB </h1>
 
 ## Les aspects techniques
 

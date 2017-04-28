@@ -1,4 +1,4 @@
-# DROP DA BOMB 
+<h1 align="center"> DROP DA BOMB </h1>
 ## Les regles du jeu
 
 1. [Principe Général](#principe-général)
