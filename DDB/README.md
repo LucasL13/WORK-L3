@@ -59,8 +59,8 @@ Si vous êtes un nouvel utilisateur, voici comment jouer en quelques étapes seu
 * Creation de nouveaux contenus (cartes, modes de jeu, icônes, etc..)
 
 
-- [] aaa
-- [] bbb
+- [ ] aaa
+- [ ] bbb
 - [x] cccc
 - [x] dddd
  
