@@ -35,7 +35,7 @@ Nom | Description | Membre | Temps (en h)
 ### Sprint 4
 Nom | Description | Membre | Temps (en h)
 --- | ------------| ------ | ------------
-**CONTENT1** | Création de la premiere "vague" de contenus (cartes, backgrounds, etc..) | Lucas | 8
+**CTN1** | Création de la premiere "vague" de contenus (cartes, backgrounds, etc..) | Lucas | 8
 **GUI1** | Mise au point d'une premiere ébauche d'interface pour le jeu | Lucas | 3
 **GUI2** | Mise au point d'une charte graphique pour le site | Pierre | 4
-**JEU1** | Développement du jeu  - utilisation et modification des structures liées au jeu | Rémi| 5 
+**JEU1** | Développement du jeu  - utilisation et modification des structures liées au jeu | Rémi et Pierre | 5 
